@@ -236,9 +236,15 @@ public class Requests {
 		String extract = jsonobjextract.get("extract").toString();
 		//System.out.println(extract);
 		
+		String[] aux = extract.split("</p>");
+		
+		String firstParagraph = aux[0].replaceAll("\\<[^>]*>", "");
+		
 		//TODO retirar apenas o extracts
 		String cleanExtract = extract.replaceAll("\\<[^>]*>", "");
 		System.out.println(cleanExtract);
+		
+		System.out.println("First paragraph is: " + firstParagraph);
  
 	}
  
