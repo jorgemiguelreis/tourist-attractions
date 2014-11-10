@@ -1,3 +1,4 @@
 *.class
 *~
 /code/.metadata
+code/TouristAttractionsProject/.classpath
