@@ -124,10 +124,10 @@
 
    <field name="title" type="text_pt" indexed="true" stored="true" required="true" multiValued="false"/>
    <field name="url" type="string" indexed="false" stored="true" required="true" multiValued="false"/>
-   <field name="first_paragraph" type="text_pt" indexed="true" stored="false" required="true" multiValued="false"/> <!-- +relevancia! -->
+   <field name="first_paragraph" type="text_pt" indexed="true" stored="true" required="true" multiValued="false"/> <!-- +relevancia! -->
    <field name="text_content" type="text_pt" indexed="true" stored="false" required="true" multiValued="false"/>
-   <field name="revision" type="string" indexed="false" stored="true" required="true" multiValued="false"/>
-   <field name="categoryid" type="int" indexed="true" stored="true" required="true" multiValued="false"/>
+   <field name="lastchange" type="string" indexed="false" stored="true" required="true" multiValued="false"/>
+   <field name="categoryid" type="string" indexed="false" stored="true" required="true" multiValued="false"/>
 
 <!--
    <field name="sku" type="text_en_splitting_tight" indexed="true" stored="true" omitNorms="true"/>
