@@ -7,13 +7,14 @@ public class Article {
 	private String firstParagraph;
 	private String url;
 	private String text;
-	private String revision;
+	private String lastchange;
 	private String category_id;
 	
-	public Article(String id, String title, String cat) {
+	public Article(String id, String title, String cat, String lastchange) {
 		this.title=title;
 		this.id=id;
 		this.category_id=cat;
+		this.lastchange=lastchange;
 		this.url="http://pt.wikipedia.org/wiki/"+title;
 	}
 		
@@ -57,12 +58,12 @@ public class Article {
 		this.text = text;
 	}
 
-	public String getRevision() {
-		return revision;
+	public String getLastChange() {
+		return lastchange;
 	}
 
-	public void setRevision(String revision) {
-		this.revision = revision;
+	public void setLastChange(String revision) {
+		this.lastchange = revision;
 	}
 
 	public String getCategory_id() {
@@ -80,7 +81,16 @@ public class Article {
 			return true;
 		else return false;
 	}
-	
-	
+
+	public void printDebug() {
+		System.out.println("ARTIGO");
+		System.out.println("TÍTULO: "+title);
+		System.out.println("ID: "+id);
+		System.out.println("1st P: "+firstParagraph);
+		System.out.println("URL: "+url);
+		System.out.println("TEXT: "+text);
+		System.out.println("LAST CHANGE: "+lastchange);
+		System.out.println("\n");
+	}
 	
 }

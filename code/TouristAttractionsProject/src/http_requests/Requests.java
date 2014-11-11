@@ -20,9 +20,12 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
+import exceptions.ArticleException;
+import exceptions.CategoryException;
+
 public class Requests {
 
-	private final String USER_AGENT = "Mozilla/5.0";
+	private static final String USER_AGENT = "Mozilla/5.0";
 
 	public static Map<Article, Category> articleCategory = new HashMap<Article, Category>();
 	private static FactoryDAO dao;
@@ -34,7 +37,6 @@ public class Requests {
 
 		Category mainCat = new Category("Atra%C3%A7%C3%B5es+tur%C3%ADsticas+de+Portugal", "1172679" , 0);
 		processCat(mainCat);
-
 		dao.closeConnection();
 		System.out.println("DONE");
 	}
@@ -49,13 +51,23 @@ public class Requests {
 			Vector<Article> articles = http.obtainArticlesFromCategory(category);
 
 			for(Article article : articles) {
-				if(articleCategory.containsKey(article))
-					if(category.getDepth() >= articleCategory.get(article).getDepth()) {
-						ArticleDAO.insertArticle(category, article);
+				if(articleCategory.containsKey(article)) { //FIXME //TODO
+					/*if(category.getDepth() >= articleCategory.get(article).getDepth()) {
+						//ArticleDAO.insertArticle(category, article);
 						articleCategory.put(article, category);
+						article.setCategory_id(category.getId());
+						ArticleDAO.insertArticle(article);
+					}*/
+				}
+				else {
+					try {
+						sendGet(article);
+						ArticleDAO.insertArticle(article);
+					} catch(ArticleException e) {
+						System.err.println("Article Rejected: " + e.getTitle());
 					}
+				}
 			}
-
 			//guardar herança na bd
 			for(int i=0; i<subcats.size(); i++) {	
 				CategoryDAO.insertCategoriesInheritance(category, subcats.elementAt(i));
@@ -104,8 +116,15 @@ public class Requests {
 
 		while ((inputLine = in.readLine()) != null) {
 			String[] result = inputLine.split(",");
-			Article a = new Article(result[1].replace("\"",""), result[0].replace("\"",""), category.getId());
-			articles.add(a);	
+			String id = result[1].replace("\"","");
+			String name = result[0].replace("\"","");
+			if(!name.startsWith("Lista")) {
+				String lastchange = result[4].replace("\"","");
+				Article a = new Article(id, name, category.getId(), lastchange);
+				articles.add(a);
+			}
+			else
+				System.err.println("Article Rejected: "+name);
 		}
 		in.close();
 
@@ -131,9 +150,9 @@ public class Requests {
 		wr.close();
 
 		int responseCode = con.getResponseCode();
-//		System.out.println("\nSending 'POST' request to URL : " + url);
-//		System.out.println("Post parameters : " + urlParameters);
-		System.out.println("POST Response Code : " + responseCode);
+		//		System.out.println("\nSending 'POST' request to URL : " + url);
+		//		System.out.println("Post parameters : " + urlParameters);
+		//System.out.println("POST Response Code : " + responseCode);
 
 		BufferedReader in = new BufferedReader(
 				new InputStreamReader(con.getInputStream(),"UTF-8"));
@@ -159,7 +178,7 @@ public class Requests {
 	}
 
 	// HTTP GET request
-	private void sendGet(Article article) throws Exception {
+	private static void sendGet(Article article) throws Exception {
 
 		JSONParser parser = new JSONParser();
 
@@ -177,7 +196,7 @@ public class Requests {
 
 		int responseCode = con.getResponseCode();
 		//System.out.println("\nSending 'GET' request to URL : " + url);
-		System.out.println("GET Response Code : " + responseCode);
+		//System.out.println("GET Response Code : " + responseCode);
 
 		BufferedReader in = new BufferedReader(
 				new InputStreamReader(con.getInputStream(),"UTF-8"));
@@ -193,34 +212,39 @@ public class Requests {
 		JSONObject jsonObject = (JSONObject) objparse;
 		String query = jsonObject.get("query").toString();
 
-
 		Object objpages = parser.parse(query);
 		JSONObject jsonobjpages = (JSONObject) objpages;
 		String pages = jsonobjpages.get("pages").toString();
-
 
 		Object objarticleID = parser.parse(pages);
 		JSONObject jsonobjarticleID = (JSONObject) objarticleID;
 		String articleIDjason = jsonobjarticleID.get(article.getId()).toString();
 
-
 		Object objextract = parser.parse(articleIDjason);
 		JSONObject jsonobjextract = (JSONObject) objextract;
 		String extract = jsonobjextract.get("extract").toString();
 
-		String[] aux = extract.split("</p>");
+		//checks if article is empty (redirection's case)
+		if(extract.isEmpty())
+			throw new ArticleException(article.getTitle());
 
-		String firstParagraph = aux[0].replaceAll("\\<[^>]*>", "");
+		String[] aux = extract.split("</p>", 2);
 
-		//TODO retirar apenas o extracts
-		String cleanExtract = extract.replaceAll("\\<[^>]*>", "");
-		System.out.println(cleanExtract);
+		if(aux.length<2) {
+			System.out.println("ATENTION < 2: "+article.getTitle());
+			System.exit(1);
+		}
 
-		System.out.println("First paragraph is: " + firstParagraph);
+		String firstParagraph = " ";
+		if(aux[0] != null)
+			firstParagraph = aux[0].replaceAll("\\<[^>]*>", "");
+
+		String cleanExtract = " ";
+		if(aux[1] != null)
+			cleanExtract = aux[1].replaceAll("\\<[^>]*>", "");
 
 		article.setFirstParagraph(firstParagraph);
 		article.setText(cleanExtract);
 	}
-
 
 }

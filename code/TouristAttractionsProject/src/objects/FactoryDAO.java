@@ -71,7 +71,7 @@ public class FactoryDAO {
 				Class.forName("org.sqlite.JDBC");
 				// create a database connection to our .db file
 				connection = DriverManager.getConnection("jdbc:sqlite:"+databasePath);
-				connection.setAutoCommit(false);
+				//connection.setAutoCommit(false);
 				return connection;
 
 			} catch (Exception e) {

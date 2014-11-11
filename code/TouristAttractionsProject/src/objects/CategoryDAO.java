@@ -3,6 +3,8 @@ package objects;
 import java.sql.*;
 import java.util.Vector;
 
+import exceptions.CategoryException;
+
 public class CategoryDAO {
 
 	public static void insertCategory(Category cat) throws CategoryException {
@@ -14,7 +16,7 @@ public class CategoryDAO {
 			String sql = "insert into category values('"+cat.getId()+"', '"+ cat.getTitle() + "');";
 			stmt.executeUpdate(sql);
 			stmt.close();
-			System.out.println("Category inserted successfully");
+			//System.out.println("Category inserted successfully");
 		} catch ( Exception e ) {
 			//e.printStackTrace();
 			//System.err.println( e.getClass().getName() + ": " + e.getMessage() );
@@ -31,7 +33,7 @@ public class CategoryDAO {
 			String sql = "insert into categories_inheritance values('"+cat.getId()+ "', '" + subcat.getId() + "');";
 			stmt.executeUpdate(sql);
 			stmt.close();
-			System.out.println("Category Inheritance inserted successfully");
+			//System.out.println("Category Inheritance inserted successfully");
 		} catch ( Exception e ) {
 			e.printStackTrace();
 			System.err.println( e.getClass().getName() + ": " + e.getMessage() );
