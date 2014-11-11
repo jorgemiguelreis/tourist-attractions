@@ -115,7 +115,7 @@ public class Requests {
 		Vector<Article> articles = new Vector<Article>();
 
 		while ((inputLine = in.readLine()) != null) {
-			String[] result = inputLine.split(",");
+			String[] result = inputLine.split("\",\"");
 			String id = result[1].replace("\"","");
 			String name = result[0].replace("\"","");
 			if(!name.startsWith("Lista")) {
@@ -164,7 +164,7 @@ public class Requests {
 		Vector<Category> subcats = new Vector<Category>();
 
 		while ((inputLine = in.readLine()) != null) {	
-			String[] result = inputLine.split(",");
+			String[] result = inputLine.split("\",\"");
 			String name = result[0].replace("\"","");
 			if(!name.startsWith("!")) {
 				String id = result[1].replace("\"","");
@@ -216,6 +216,7 @@ public class Requests {
 		JSONObject jsonobjpages = (JSONObject) objpages;
 		String pages = jsonobjpages.get("pages").toString();
 
+		System.out.println("TITLE"+article.getTitle());
 		Object objarticleID = parser.parse(pages);
 		JSONObject jsonobjarticleID = (JSONObject) objarticleID;
 		String articleIDjason = jsonobjarticleID.get(article.getId()).toString();

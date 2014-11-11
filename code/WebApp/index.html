@@ -15,6 +15,9 @@
 
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+    
 </head>
 
 <body>
@@ -22,6 +25,7 @@
     
     <h1>Atracções Turísticas de Portugal</h1>
         <br><br>
+    <!--
     <div id="custom-search-input">
         <div class="input-group col-md-12">
            <input type="text" class="  search-query form-control" placeholder="Search" />
@@ -31,7 +35,14 @@
             </button>
            </span>
         </div>
-      </div>
+      </div> -->
+
+ <form action="javascript:search()">
+Search: 
+<input type="text" name="Search" id="terms">
+<input type="submit" value="Submit">
+</form> 
+    
     
 <br><br>
     <hgroup class="mb20">
@@ -101,7 +112,5 @@
 </div>
 
 </body>
-
-
 
 </html>
