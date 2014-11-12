@@ -8,9 +8,9 @@ import org.apache.solr.client.solrj.impl.HttpSolrServer;
 import org.apache.solr.client.solrj.response.UpdateResponse;
 import org.apache.solr.common.SolrInputDocument;
 
-public class ArticleDAO {
+public class ArticleSolr {
 
-	private static final String urlString = "http://localhost:8983/solr/atracoes"; 
+	private static final String urlString = "http://localhost:8983/solr/atracoes";
 	
 	public static void insertArticle(Article article) {
 		SolrServer solr = new HttpSolrServer(urlString);
@@ -23,8 +23,10 @@ public class ArticleDAO {
 		document.addField("url", article.getUrl());
 		document.addField("first_paragraph", article.getFirstParagraph());
 		document.addField("text_content", article.getText());
-		document.addField("categoryid", article.getCategory_id());
+		document.addField("categoryid", article.getCategoryId());
+		document.addField("categoryname", article.getCategoryName());
 		document.addField("lastchange", article.getLastChange());
+		document.addField("picture_url", article.getPictureUrl());
 		
 		try {
 			UpdateResponse response = solr.add(document);

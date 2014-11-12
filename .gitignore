@@ -2,3 +2,5 @@
 *~
 /code/.metadata
 code/TouristAttractionsProject/.classpath
+code/TouristAttractionsProject/bin/
+*.db

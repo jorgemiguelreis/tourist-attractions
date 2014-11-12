@@ -1,8 +1,10 @@
 package http_requests;
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+import java.net.ProtocolException;
 import java.net.URL;
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
@@ -19,6 +21,7 @@ import objects.*;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 import exceptions.ArticleException;
 import exceptions.CategoryException;
@@ -38,7 +41,7 @@ public class Requests {
 		Category mainCat = new Category("Atra%C3%A7%C3%B5es+tur%C3%ADsticas+de+Portugal", "1172679" , 0);
 		processCat(mainCat);
 		dao.closeConnection();
-		System.out.println("DONE");
+		System.out.println("DONE.");
 	}
 
 	public static void processCat(Category category) throws Exception {
@@ -62,7 +65,7 @@ public class Requests {
 				else {
 					try {
 						sendGet(article);
-						ArticleDAO.insertArticle(article);
+						ArticleSolr.insertArticle(article);
 					} catch(ArticleException e) {
 						System.err.println("Article Rejected: " + e.getTitle());
 					}
@@ -90,7 +93,7 @@ public class Requests {
 		con.setRequestMethod("POST");
 		con.setRequestProperty("User-Agent", USER_AGENT);
 		con.setRequestProperty("Accept-Language", "en-US,en;q=0.5");
-		String urlParameters = "language=pt&project=wikipedia&depth=0&categories="+category.getTitle()+"&negcats=&comb%5Bsubset%5D=1&atleast_count=0&ns%5B0%5D=1&show_redirects=both&templates_yes=&templates_any=&templates_no=&outlinks_yes=&outlinks_any=&outlinks_no=&edits%5Bbots%5D=both&edits%5Banons%5D=both&edits%5Bflagged%5D=both&before=&after=&max_age=&larger=&smaller=&minlinks=&maxlinks=&min_redlink_count=1&min_topcat_count=1&sortby=none&sortorder=ascending&format=csv&doit=Do+it%21&interface_language=en";
+		String urlParameters = "language=pt&project=wikipedia&depth=0&categories="+category.getTitle()+"&negcats=&comb%5Bsubset%5D=1&atleast_count=0&ns%5B0%5D=1&show_redirects=no&templates_yes=&templates_any=&templates_no=&outlinks_yes=&outlinks_any=&outlinks_no=&edits%5Bbots%5D=both&edits%5Banons%5D=both&edits%5Bflagged%5D=both&before=&after=&max_age=&larger=&smaller=&minlinks=&maxlinks=&min_redlink_count=1&min_topcat_count=1&sortby=none&sortorder=ascending&format=csv&doit=Do+it%21&interface_language=en";
 
 		// Send post request
 		con.setDoOutput(true);
@@ -100,9 +103,6 @@ public class Requests {
 		wr.close();
 
 		int responseCode = con.getResponseCode();
-		//		System.out.println("\nSending 'POST' request to URL : " + url);
-		//		System.out.println("Post parameters : " + urlParameters);
-		//		System.out.println("Response Code : " + responseCode);
 
 		BufferedReader in = new BufferedReader(
 				new InputStreamReader(con.getInputStream(),"UTF-8"));
@@ -120,7 +120,7 @@ public class Requests {
 			String name = result[0].replace("\"","");
 			if(!name.startsWith("Lista")) {
 				String lastchange = result[4].replace("\"","");
-				Article a = new Article(id, name, category.getId(), lastchange);
+				Article a = new Article(id, name, category.getId(), category.getTitle(), lastchange);
 				articles.add(a);
 			}
 			else
@@ -150,9 +150,6 @@ public class Requests {
 		wr.close();
 
 		int responseCode = con.getResponseCode();
-		//		System.out.println("\nSending 'POST' request to URL : " + url);
-		//		System.out.println("Post parameters : " + urlParameters);
-		//System.out.println("POST Response Code : " + responseCode);
 
 		BufferedReader in = new BufferedReader(
 				new InputStreamReader(con.getInputStream(),"UTF-8"));
@@ -195,8 +192,6 @@ public class Requests {
 		con.setRequestProperty("User-Agent", USER_AGENT);
 
 		int responseCode = con.getResponseCode();
-		//System.out.println("\nSending 'GET' request to URL : " + url);
-		//System.out.println("GET Response Code : " + responseCode);
 
 		BufferedReader in = new BufferedReader(
 				new InputStreamReader(con.getInputStream(),"UTF-8"));
@@ -216,7 +211,7 @@ public class Requests {
 		JSONObject jsonobjpages = (JSONObject) objpages;
 		String pages = jsonobjpages.get("pages").toString();
 
-		System.out.println("TITLE"+article.getTitle());
+		//System.out.println("TITLE"+article.getTitle());
 		Object objarticleID = parser.parse(pages);
 		JSONObject jsonobjarticleID = (JSONObject) objarticleID;
 		String articleIDjason = jsonobjarticleID.get(article.getId()).toString();
@@ -231,7 +226,7 @@ public class Requests {
 
 		String[] aux = extract.split("</p>", 2);
 
-		if(aux.length<2) {
+		if(aux.length<2) { //FIXME
 			System.out.println("ATENTION < 2: "+article.getTitle());
 			System.exit(1);
 		}
@@ -246,6 +241,60 @@ public class Requests {
 
 		article.setFirstParagraph(firstParagraph);
 		article.setText(cleanExtract);
+		getImage(article);
+	}
+
+	private static void getImage(Article article) throws IOException, ParseException, ArticleException {
+		JSONParser parser = new JSONParser();
+
+		String url = "http://pt.wikipedia.org/w/api.php?action=query&titles="+article.getTitle()+"&prop=pageimages&format=json&pithumbsize=300";
+
+		URL obj = new URL(url);
+		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+
+		// optional default is GET
+		con.setRequestMethod("GET");
+
+		//add request header
+		con.setRequestProperty("User-Agent", USER_AGENT);
+
+		int responseCode = con.getResponseCode();
+
+		BufferedReader in = new BufferedReader(
+				new InputStreamReader(con.getInputStream(),"UTF-8"));
+		String inputLine;
+		StringBuffer response = new StringBuffer();
+
+		while ((inputLine = in.readLine()) != null) {
+			response.append(inputLine);
+		}
+		in.close();
+
+		Object objparse = parser.parse(response.toString());
+		JSONObject jsonObject = (JSONObject) objparse;
+		String query = jsonObject.get("query").toString();
+
+		Object objpages = parser.parse(query);
+		JSONObject jsonobjpages = (JSONObject) objpages;
+		String pages = jsonobjpages.get("pages").toString();
+
+		Object objarticleID = parser.parse(pages);
+		JSONObject jsonobjarticleID = (JSONObject) objarticleID;
+		String articleIDjason = jsonobjarticleID.get(article.getId()).toString();
+
+		Object objthumbnail = parser.parse(articleIDjason);
+		JSONObject jsonobjextract = (JSONObject) objthumbnail;
+		if(jsonobjextract.get("thumbnail")!=null)
+		{
+			String thumbnail = jsonobjextract.get("thumbnail").toString();
+			//System.out.println(thumbnail);
+			Object objsource = parser.parse(thumbnail);
+			JSONObject jsonobjsource = (JSONObject) objsource;
+			String source = jsonobjsource.get("source").toString();
+			source = source.replace("\"", "");
+			//System.out.println(source);
+			article.setPictureUrl(source);
+		}
 	}
 
 }

@@ -6,16 +6,20 @@ public class Article {
 	private String id;
 	private String firstParagraph;
 	private String url;
+	private String pictureUrl;
 	private String text;
 	private String lastchange;
 	private String category_id;
+	private String category_name;
 	
-	public Article(String id, String title, String cat, String lastchange) {
+	public Article(String id, String title, String catid, String catname, String lastchange) {
 		this.title=title;
 		this.id=id;
-		this.category_id=cat;
+		this.category_id=catid;
+		this.category_name=catname;
 		this.lastchange=lastchange;
 		this.url="http://pt.wikipedia.org/wiki/"+title;
+		this.pictureUrl="http://www.dwarkapropertydealers.com/imgres/noimage.jpg";
 	}
 		
 	public String getTitle() {
@@ -66,11 +70,11 @@ public class Article {
 		this.lastchange = revision;
 	}
 
-	public String getCategory_id() {
+	public String getCategoryId() {
 		return category_id;
 	}
 
-	public void setCategory_id(String category_id) {
+	public void setCategoryId(String category_id) {
 		this.category_id = category_id;
 	}
 
@@ -91,6 +95,22 @@ public class Article {
 		System.out.println("TEXT: "+text);
 		System.out.println("LAST CHANGE: "+lastchange);
 		System.out.println("\n");
+	}
+
+	public String getCategoryName() {
+		return category_name;
+	}
+
+	public void setCategoryName(String catname) {
+		this.category_name = catname;
+	}
+
+	public String getPictureUrl() {
+		return pictureUrl;
+	}
+
+	public void setPictureUrl(String pictureUrl) {
+		this.pictureUrl = pictureUrl;
 	}
 	
 }
