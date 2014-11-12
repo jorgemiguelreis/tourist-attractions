@@ -29,17 +29,42 @@ function get() {
   }
 }); */
     
+    /*
     $.ajax({
 dataType: 'jsonp',
 data: 'id=10',
 jsonp: 'myCallbackFunction',
-url: 'http://127.0.0.1:8983/solr/atracoes/select?q=title:castelo&wt=json&indent=true',
+url: 'http://localhost:8983/solr/atracoes/select?q=title:castelo&wt=json&indent=true',
 success: function () {
     alert("AA");
 // do stuff
 },
 });
+*/
+    
+    
+        /*
+      var query = $('#query').val();
+        if (query.length == 0) {
+            return;
+        }
+        */
+
+        var url='http://localhost:8983/solr/atracoes/select?q=title:castelo&version=2.2&start=0&rows=50&indent=on&wt=json&callback=?&json.wrf=on_data';
+        $.getJSON(url);
+    
 }
+
+ function on_data(data) {
+      $('#results').empty();
+        var docs = data.response.docs;
+        $.each(docs, function(i, item) {
+            $('#results').prepend($('<div>' + item.title + '</div>'));
+        });
+
+        var total = 'Found ' + docs.length + ' results';
+        $('#results').prepend('<div>' + total + '</div>');
+    }
 
 function myCallbackFunction(data){
        // $('body').text(data.response);
