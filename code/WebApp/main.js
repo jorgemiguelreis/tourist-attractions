@@ -1,7 +1,7 @@
 var searchphrase = "";
 
 //$(document).ready(function() {dbtest();});
-$(document).ready(function() {getArticleImage()});
+
 function search() {
     $('#results_header').empty();
     $('#results').empty();
@@ -24,17 +24,6 @@ function search() {
           }   
     });
     }
-}
-
-function getArticleImage() {
-    var url = 'http://pt.wikipedia.org/w/api.php?action=query&titles='+'Casa_de_Serralves'+'&prop=pageimages&format=json&pithumbsize=100';
-    $.getJSON(url).done(function(data){alert(JSON.stringify(data));}) ;
-    alert("aquiiiiiii");
-}
-
-function on_data2(data) {
-    var docs = data.response.docs;
-    console.log(JSON.stringify(docs));
 }
 
 /*
@@ -113,12 +102,12 @@ function printResult(item) {
         '<article class="search-result row">',
 			'<div class="col-xs-12 col-sm-12 col-md-3">',
             '<a href="'+ item.url +'" title="'+item.title+'" class="thumbnail">',
-                '<img src="'+"http://lorempixel.com/250/140/people"+'" alt="'+item.title+'" /></a>',
+                '<img src="'+item.picture_url+'" alt="'+item.title+'" /></a>',
 			'</div>',
 			'<div class="col-xs-12 col-sm-12 col-md-2">',
 				'<ul class="meta-search">',
 					'<li><i class="glyphicon glyphicon-calendar"></i> <span>'+item.pageid+'</span></li>',
-					'<li><i class="glyphicon glyphicon-time"></i> <span>'+item.categoryid+'</span></li>',
+					'<li><i class="glyphicon glyphicon-time"></i> <span>'+item.categoryname.replace(/_/g, " ")+'</span></li>',
 					'<li><i class="glyphicon glyphicon-tags"></i> <span>'+item.lastchange.replace(
     /^(\d{4})(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})$/,
     "$1/$2/$3 $4:$5:$6")+'</span></li>',
