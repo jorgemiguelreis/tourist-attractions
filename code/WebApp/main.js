@@ -11,7 +11,12 @@ function search() {
     if(terms) {
         terms = terms.trim();
         var words = terms.replace(" ", "+");
-        var url='http://localhost:8983/solr/atracoes/select?q=title:"'+words+'"&version=2.2&start=0&rows=1000&indent=on&wt=json&callback=?&json.wrf=on_data';
+        //var url='http://localhost:8983/solr/atracoes/select?q=title:"'+words+'"&version=2.2&start=0&rows=1000&indent=on&wt=json&callback=?&json.wrf=on_data';
+        
+        var url='http://localhost:8983/solr/atracoes/select?defType=dismax&q='+words+'&qf=title^3.0+first_paragraph^2.0+text_content&start=0&rows=1000&wt=json&indent=true&callback=?&json.wrf=on_data';
+        
+        //http://localhost:8983/solr/atracoes/select?defType=dismax&q=porto&qf=title^3.0+first_paragraph^2.0+text_content^1.0&wt=json&indent=true
+        
         $.getJSON(url).fail(function(jqXHR, textStatus, errorThrown) {
           if(textStatus != "parsererror") {
            
@@ -82,18 +87,19 @@ $.ajaxSetup({
       $('#results').empty();
         var docs = data.response.docs;
        // console.log(JSON.stringify(docs));
-        $.each(docs, function(i, item) {
-            printResult(item);
-        });
-
-        var total = 'Found ' + docs.length + ' results';
+        
+     var total = 'Found ' + docs.length + ' results';
      
      var header = [
         '<h1>Search Results</h1>',
 		'<h2 class="lead"><strong class="text-danger">'+docs.length+'</strong> results were found for the search for <strong class="text-danger">'+searchphrase+'</strong></h2>'
      ].join('\n');
      
-        $('#results_header').append(header);
+     $('#results_header').append(header);
+     
+     $.each(docs, function(i, item) {
+            printResult(item);
+        });
 }
 
 function printResult(item) {

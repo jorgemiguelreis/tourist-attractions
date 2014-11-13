@@ -17,7 +17,7 @@ public class ArticleSolr {
 		article.printDebug();
 		
 		SolrInputDocument document = new SolrInputDocument();
-		
+
 		document.addField("pageid", article.getId());
 		document.addField("title", article.getTitle().replace("_", " "));
 		document.addField("url", article.getUrl());

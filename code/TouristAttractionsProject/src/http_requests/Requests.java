@@ -31,16 +31,16 @@ public class Requests {
 	private static final String USER_AGENT = "Mozilla/5.0";
 
 	public static Map<Article, Category> articleCategory = new HashMap<Article, Category>();
-	private static FactoryDAO dao;
+	//private static FactoryDAO dao;
 
 	public static void main(String[] args) throws Exception {
 
 		Requests http = new Requests();
-		dao = new FactoryDAO();
+		new FactoryDAO();
 
 		Category mainCat = new Category("Atra%C3%A7%C3%B5es+tur%C3%ADsticas+de+Portugal", "1172679" , 0);
 		processCat(mainCat);
-		dao.closeConnection();
+		FactoryDAO.closeConnection();
 		System.out.println("DONE.");
 	}
 
