@@ -13,7 +13,7 @@ function search() {
         var words = terms.replace(" ", "+");
         //var url='http://localhost:8983/solr/atracoes/select?q=title:"'+words+'"&version=2.2&start=0&rows=1000&indent=on&wt=json&callback=?&json.wrf=on_data';
         
-        var url='http://localhost:8983/solr/atracoes/select?defType=dismax&q='+words+'&qf=title^3.0+first_paragraph^2.0+text_content&start=0&rows=1000&wt=json&indent=true&callback=?&json.wrf=on_data';
+        var url='http://localhost:8983/solr/atracoes/select?defType=dismax&q='+words+'&qf=title^2.0+first_paragraph^1.3+text_content&start=0&rows=1000&wt=json&indent=true&callback=?&json.wrf=on_data';
         
         //http://localhost:8983/solr/atracoes/select?defType=dismax&q=porto&qf=title^3.0+first_paragraph^2.0+text_content^1.0&wt=json&indent=true
         
@@ -89,10 +89,10 @@ $.ajaxSetup({
        // console.log(JSON.stringify(docs));
         
      var total = 'Found ' + docs.length + ' results';
-     
+     //results were found for the search for
      var header = [
-        '<h1>Search Results</h1>',
-		'<h2 class="lead"><strong class="text-danger">'+docs.length+'</strong> results were found for the search for <strong class="text-danger">'+searchphrase+'</strong></h2>'
+        '<h1>Resultados</h1>',
+		'<h2 class="lead"><strong class="text-danger">'+docs.length+'</strong> resultados encontrados para a pesquisa <strong class="text-danger">'+searchphrase+'</strong></h2>'
      ].join('\n');
      
      $('#results_header').append(header);
@@ -112,9 +112,9 @@ function printResult(item) {
 			'</div>',
 			'<div class="col-xs-12 col-sm-12 col-md-2">',
 				'<ul class="meta-search">',
-					'<li><i class="glyphicon glyphicon-calendar"></i> <span>'+item.pageid+'</span></li>',
-					'<li><i class="glyphicon glyphicon-time"></i> <span>'+item.categoryname.replace(/_/g, " ")+'</span></li>',
-					'<li><i class="glyphicon glyphicon-tags"></i> <span>'+item.lastchange.replace(
+					'<li><i class="glyphicon glyphicon-record"></i> <span>ID: '+item.pageid+'</span></li>',
+					'<li><i class="glyphicon glyphicon-tag"></i> <span>'+item.categoryname.replace(/_/g, " ")+'</span></li>',
+					'<li><i class="glyphicon glyphicon-calendar"></i> <span>'+item.lastchange.replace(
     /^(\d{4})(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})$/,
     "$1/$2/$3 $4:$5:$6")+'</span></li>',
 				'</ul>',

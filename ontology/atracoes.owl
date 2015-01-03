@@ -1,0 +1,1726 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY terms "http://open.vocab.org/terms/" >
+    <!ENTITY ontology "http://dbpedia.org/ontology/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY attr "http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#"
+     xml:base="http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:terms="http://open.vocab.org/terms/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:attr="http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#"
+     xmlns:ontology="http://dbpedia.org/ontology/">
+    <owl:Ontology rdf:about="http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl">
+        <rdfs:label xml:lang="en">Place</rdfs:label>
+        <rdfs:comment xml:lang="en">A tourist attraction ontology.</rdfs:comment>
+        <rdfs:comment xml:lang="pt">Ontologia sobre atrações turísticas.</rdfs:comment>
+        <owl:imports rdf:resource="&ontology;Building"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/ontology/altitude -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;altitude">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/annualTemperature -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;annualTemperature">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/areaDate -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;areaDate">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/areaLand -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;areaLand">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/areaOfCatchmentQuote -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;areaOfCatchmentQuote">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/areaQuote -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;areaQuote">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/areaRank -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;areaRank">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/areaTotal -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;areaTotal">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/areaWater -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;areaWater">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/artificialSnowArea -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;artificialSnowArea">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/authorityMandate -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;authorityMandate">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/averageDepth -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;averageDepth">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/averageDepthQuote -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;averageDepthQuote">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/avifaunaPopulation -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;avifaunaPopulation">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/biggestCity -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;biggestCity">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/bioclimate -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;bioclimate">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/bird -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;bird">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/blackLongDistancePisteNumber -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;blackLongDistancePisteNumber">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/blackSkiPisteNumber -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;blackSkiPisteNumber">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/blueLongDistancePisteNumber -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;blueLongDistancePisteNumber">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/blueSkiPisteNumber -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;blueSkiPisteNumber">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/budgetYear -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;budgetYear">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/cableCar -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;cableCar">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/cannonNumber -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;cannonNumber">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/capitalCoordinates -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;capitalCoordinates">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/cityLink -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;cityLink">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/climate -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;climate">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/climbUpNumber -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;climbUpNumber">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/coastLength -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;coastLength">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/codeLandRegistry -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;codeLandRegistry">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/codeMunicipalMonument -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;codeMunicipalMonument">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/codeNationalMonument -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;codeNationalMonument">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/codeProvincialMonument -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;codeProvincialMonument">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/coordinates -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;coordinates">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/currencyCode -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;currencyCode">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/dateAgreement -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;dateAgreement">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/daylightSavingTimeZone -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;daylightSavingTimeZone">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/depth -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;depth">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/depthQuote -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;depthQuote">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/depths -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;depths">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/different -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;different">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/district -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;district">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/elevation -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;elevation">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/elevationQuote -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;elevationQuote">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/endangeredSince -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;endangeredSince">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/eventDate -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;eventDate">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/fauna -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;fauna">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/flora -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;flora">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/flower -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;flower">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/foresterDistrict -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;foresterDistrict">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/frontierLength -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;frontierLength">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/geolocDual -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;geolocDual">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/geologicPeriod -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;geologicPeriod">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/governingBody -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;governingBody">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/greenLongDistancePisteNumber -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;greenLongDistancePisteNumber">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/greenSkiPisteNumber -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;greenSkiPisteNumber">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/gridReference -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;gridReference">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/grossDomesticProductPerPeople -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;grossDomesticProductPerPeople">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/grossDomesticProductRank -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;grossDomesticProductRank">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/heritageRegister -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;heritageRegister">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/historicalMap -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;historicalMap">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/historicalName -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;historicalName">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/humanDevelopmentIndexRank -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;humanDevelopmentIndexRank">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/information -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;information">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/informationName -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;informationName">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/iso31661Code -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;iso31661Code">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/isoCode -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;isoCode">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/kindOfCoordinate -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;kindOfCoordinate">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/kindOfRock -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;kindOfRock">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/lake -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;lake">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/landArea -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;landArea">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/landPercentage -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;landPercentage">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/lawCountry -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;lawCountry">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/lengthQuote -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;lengthQuote">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/limit -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;limit">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/linkedSpace -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;linkedSpace">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/longDistancePisteKilometre -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;longDistancePisteKilometre">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/longDistancePisteNumber -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;longDistancePisteNumber">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/lowest -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;lowest">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/map -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;map">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/mapCaption -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;mapCaption">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/mapDescription -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;mapDescription">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/maximumArea -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;maximumArea">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/maximumAreaQuote -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;maximumAreaQuote">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/maximumDepth -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;maximumDepth">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/maximumDepthQuote -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;maximumDepthQuote">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/maximumElevation -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;maximumElevation">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/mayorArticle -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;mayorArticle">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/mergerDate -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;mergerDate">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/minimumArea -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;minimumArea">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/minimumAreaQuote -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;minimumAreaQuote">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/minimumElevation -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;minimumElevation">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/municipalityCode -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;municipalityCode">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/nationalTopographicSystemMapNumber -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;nationalTopographicSystemMapNumber">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/nearestCity -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;nearestCity">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/neighbourRegion -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;neighbourRegion">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/numberOfIsland -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;numberOfIsland">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/nutsCode -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;nutsCode">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/output -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;output">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/parliament -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;parliament">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/parliamentType -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;parliamentType">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/perCapitaIncomeRank -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;perCapitaIncomeRank">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/pisciculturalPopulation -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;pisciculturalPopulation">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/plant -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;plant">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/politicalLeader -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;politicalLeader">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/populationDate -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;populationDate">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/populationQuote -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;populationQuote">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/presidentGeneralCouncilMandate -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;presidentGeneralCouncilMandate">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/presidentRegionalCouncilMandate -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;presidentRegionalCouncilMandate">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/protectionStatus -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;protectionStatus">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/province -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;province">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/provinceLink -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;provinceLink">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/quote -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;quote">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/rankAgreement -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;rankAgreement">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/redLongDistancePisteNumber -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;redLongDistancePisteNumber">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/redSkiPisteNumber -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;redSkiPisteNumber">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/refcul -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;refcul">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/reference -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;reference">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/refgen -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;refgen">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/refgeo -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;refgeo">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/refpol -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;refpol">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/regency -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;regency">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/regionLink -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;regionLink">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/regionType -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;regionType">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/regionalPrefecture -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;regionalPrefecture">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/relatedPlaces -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;relatedPlaces">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/relief -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;relief">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/representative -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;representative">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/retentionTime -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;retentionTime">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/river -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;river">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/route -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;route">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/scale -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;scale">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/sea -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;sea">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/settlement -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;settlement">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/skiLift -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;skiLift">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/skiPisteKilometre -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;skiPisteKilometre">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/skiPisteNumber -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;skiPisteNumber">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/skiTow -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;skiTow">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/snowParkNumber -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;snowParkNumber">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/sovereignCountry -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;sovereignCountry">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/subPrefecture -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;subPrefecture">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/subdivisionLink -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;subdivisionLink">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/subdivisions -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;subdivisions">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/subsystem -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;subsystem">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/subsystemLink -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;subsystemLink">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/timeZone -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;timeZone">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/tree -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;tree">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/tu -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;tu">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/typeCoordinate -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;typeCoordinate">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/unesco -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;unesco">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/unloCode -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;unloCode">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/utcOffset -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;utcOffset">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/vehicleCode -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;vehicleCode">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/volumeQuote -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;volumeQuote">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/water -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;water">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/waterArea -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;waterArea">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/waterPercentage -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;waterPercentage">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/wholeArea -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;wholeArea">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/widthQuote -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;widthQuote">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/yearOfConstruction -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;yearOfConstruction">
+        <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#hasArchitect -->
+
+    <owl:ObjectProperty rdf:about="&attr;hasArchitect">
+        <rdfs:domain rdf:resource="&ontology;Building"/>
+        <rdfs:range rdf:resource="&attr;Architect"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#hasAttraction -->
+
+    <owl:ObjectProperty rdf:about="&attr;hasAttraction">
+        <rdfs:domain rdf:resource="&attr;Location"/>
+        <rdfs:range rdf:resource="&attr;TouristAttraction"/>
+        <owl:inverseOf rdf:resource="&attr;hasLocation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#hasLocation -->
+
+    <owl:ObjectProperty rdf:about="&attr;hasLocation">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&attr;Location"/>
+        <rdfs:domain rdf:resource="&attr;TouristAttraction"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#hasReligion -->
+
+    <owl:ObjectProperty rdf:about="&attr;hasReligion">
+        <rdfs:domain rdf:resource="&ontology;ReligiousBuilding"/>
+        <rdfs:range rdf:resource="&attr;Religion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#hasStyle -->
+
+    <owl:ObjectProperty rdf:about="&attr;hasStyle">
+        <rdfs:domain rdf:resource="&ontology;Building"/>
+        <rdfs:domain rdf:resource="&ontology;Garden"/>
+        <rdfs:domain rdf:resource="&ontology;Monument"/>
+        <rdfs:range rdf:resource="&attr;Style"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#isManagedBy -->
+
+    <owl:ObjectProperty rdf:about="&attr;isManagedBy">
+        <rdfs:domain rdf:resource="&ontology;ProtectedArea"/>
+        <rdfs:range rdf:resource="&attr;Organization"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#hasArea -->
+
+    <owl:DatatypeProperty rdf:about="&attr;hasArea">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment xml:lang="en">Area in hectares.</rdfs:comment>
+        <rdfs:domain rdf:resource="&ontology;Garden"/>
+        <rdfs:domain rdf:resource="&ontology;ProtectedArea"/>
+        <rdfs:domain rdf:resource="&ontology;SkiArea"/>
+        <rdfs:domain rdf:resource="&attr;AmusementPark"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#hasConstructionDate -->
+
+    <owl:DatatypeProperty rdf:about="&attr;hasConstructionDate">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&ontology;Building"/>
+        <rdfs:domain rdf:resource="&ontology;Monument"/>
+        <rdfs:domain rdf:resource="&ontology;SkiArea"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#hasContact -->
+
+    <owl:DatatypeProperty rdf:about="&attr;hasContact">
+        <rdfs:domain rdf:resource="&attr;TouristAttraction"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#hasCoordinates -->
+
+    <owl:DatatypeProperty rdf:about="&attr;hasCoordinates">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&attr;Location"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#hasInformation -->
+
+    <owl:DatatypeProperty rdf:about="&attr;hasInformation">
+        <rdfs:domain rdf:resource="&attr;TouristAttraction"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#hasLength -->
+
+    <owl:DatatypeProperty rdf:about="&attr;hasLength">
+        <rdfs:comment xml:lang="en">in Km.</rdfs:comment>
+        <rdfs:domain rdf:resource="&attr;Cavern"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#hasName -->
+
+    <owl:DatatypeProperty rdf:about="&attr;hasName">
+        <rdfs:domain rdf:resource="&attr;TouristAttraction"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#hasNumberOfTracks -->
+
+    <owl:DatatypeProperty rdf:about="&attr;hasNumberOfTracks">
+        <rdfs:domain rdf:resource="&ontology;SkiArea"/>
+        <rdfs:range rdf:resource="&xsd;unsignedInt"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#hasOpeningTime -->
+
+    <owl:DatatypeProperty rdf:about="&attr;hasOpeningTime">
+        <rdfs:domain rdf:resource="&attr;TouristAttraction"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#hasOwner -->
+
+    <owl:DatatypeProperty rdf:about="&attr;hasOwner">
+        <rdfs:domain rdf:resource="&attr;TouristAttraction"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#hasWebsite -->
+
+    <owl:DatatypeProperty rdf:about="&attr;hasWebsite">
+        <rdfs:domain rdf:resource="&attr;TouristAttraction"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#wasDiscoveredIn -->
+
+    <owl:DatatypeProperty rdf:about="&attr;wasDiscoveredIn">
+        <rdfs:domain rdf:resource="&attr;Cavern"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/ontology/Building -->
+
+    <rdf:Description rdf:about="&ontology;Building">
+        <rdfs:subClassOf rdf:resource="&attr;TouristAttraction"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Garden -->
+
+    <owl:Class rdf:about="&ontology;Garden">
+        <rdfs:subClassOf rdf:resource="&attr;TouristAttraction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Monastery -->
+
+    <owl:Class rdf:about="&ontology;Monastery">
+        <rdfs:subClassOf rdf:resource="&ontology;ReligiousBuilding"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Monument -->
+
+    <owl:Class rdf:about="&ontology;Monument">
+        <rdfs:subClassOf rdf:resource="&attr;TouristAttraction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dbpedia.org/ontology/ProtectedArea -->
+
+    <owl:Class rdf:about="&ontology;ProtectedArea">
+        <rdfs:subClassOf rdf:resource="&attr;TouristAttraction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dbpedia.org/ontology/SkiArea -->
+
+    <owl:Class rdf:about="&ontology;SkiArea">
+        <rdfs:subClassOf rdf:resource="&attr;TouristAttraction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#AmusementPark -->
+
+    <owl:Class rdf:about="&attr;AmusementPark">
+        <rdfs:subClassOf rdf:resource="&attr;TouristAttraction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#Architect -->
+
+    <owl:Class rdf:about="&attr;Architect"/>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#Cavern -->
+
+    <owl:Class rdf:about="&attr;Cavern">
+        <rdfs:subClassOf rdf:resource="&attr;TouristAttraction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#Church -->
+
+    <owl:Class rdf:about="&attr;Church">
+        <rdfs:subClassOf rdf:resource="&ontology;ReligiousBuilding"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#City -->
+
+    <owl:Class rdf:about="&attr;City">
+        <rdfs:subClassOf rdf:resource="&attr;Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#Location -->
+
+    <owl:Class rdf:about="&attr;Location"/>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#NaturalPark -->
+
+    <owl:Class rdf:about="&attr;NaturalPark">
+        <rdfs:subClassOf rdf:resource="&ontology;ProtectedArea"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#NaturalReserve -->
+
+    <owl:Class rdf:about="&attr;NaturalReserve">
+        <rdfs:subClassOf rdf:resource="&ontology;ProtectedArea"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#Organization -->
+
+    <owl:Class rdf:about="&attr;Organization"/>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#Religion -->
+
+    <owl:Class rdf:about="&attr;Religion"/>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#Style -->
+
+    <owl:Class rdf:about="&attr;Style"/>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#TouristAttraction -->
+
+    <owl:Class rdf:about="&attr;TouristAttraction"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/ontology/Place -->
+
+    <rdf:Description rdf:about="&ontology;Place"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="&ontology;data/definitions.jsonld">
+        <terms:describes rdf:resource="&ontology;Place"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="&ontology;data/definitions.ttl">
+        <terms:describes rdf:resource="&ontology;Place"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://dbpedia.org/ontology/">
+        <terms:defines rdf:resource="&ontology;Place"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="&ontology;data/definitions.xml">
+        <terms:describes rdf:resource="&ontology;Place"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&attr;Location"/>
+            <rdf:Description rdf:about="&attr;Style"/>
+            <rdf:Description rdf:about="&attr;TouristAttraction"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net -->
+
