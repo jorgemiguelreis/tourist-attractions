@@ -1509,18 +1509,15 @@
     <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#hasAttraction -->
 
     <owl:ObjectProperty rdf:about="&attr;hasAttraction">
-        <rdfs:domain rdf:resource="&attr;Location"/>
         <rdfs:range rdf:resource="&attr;TouristAttraction"/>
-        <owl:inverseOf rdf:resource="&attr;hasLocation"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#hasLocation -->
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#hasCity -->
 
-    <owl:ObjectProperty rdf:about="&attr;hasLocation">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:range rdf:resource="&attr;Location"/>
+    <owl:ObjectProperty rdf:about="&attr;hasCity">
+        <rdfs:range rdf:resource="&attr;City"/>
         <rdfs:domain rdf:resource="&attr;TouristAttraction"/>
     </owl:ObjectProperty>
     
@@ -1605,7 +1602,6 @@
 
     <owl:DatatypeProperty rdf:about="&attr;hasCoordinates">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:domain rdf:resource="&attr;Location"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -1822,15 +1818,7 @@
 
     <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#City -->
 
-    <owl:Class rdf:about="&attr;City">
-        <rdfs:subClassOf rdf:resource="&attr;Location"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#Location -->
-
-    <owl:Class rdf:about="&attr;Location"/>
+    <owl:Class rdf:about="&attr;City"/>
     
 
 
@@ -1885,6 +1873,14 @@
     
 
 
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#Albufeira -->
+
+    <owl:NamedIndividual rdf:about="&attr;Albufeira">
+        <rdf:type rdf:resource="&attr;City"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#Estância_de_Esqui_Vodafone -->
 
     <owl:NamedIndividual rdf:about="&attr;Estância_de_Esqui_Vodafone">
@@ -1903,7 +1899,6 @@ Esta estância de esqui possui 9 pistas, com um total de 7,7 km, consideradas bo
 
 Desde 2005, a empresa britânica de telecomunicações Vodafone tem patrocinado a estância de esqui e também tem sido responsável por melhorias na mesma.</hasInformation>
         <hasWebsite rdf:datatype="&xsd;string">http://www.skiserradaestrela.com/</hasWebsite>
-        <hasLocation rdf:resource="&attr;VodafoneSkiAreaLocation"/>
     </owl:NamedIndividual>
     
 
@@ -1932,7 +1927,6 @@ As obras dotaram as grutas de um conjunto de condições, a nível ambiental, pa
 No interior das grutas, o plano de requalificação previu uma reestruturação dos passadiços e da iluminação, sendo que no espaço envolvente ao monumento foi construido um novo parque de estacionamento.1
 
 A reabertura ao público ocorreu no dia 30 de Julho de 2011</hasInformation>
-        <hasLocation rdf:resource="&attr;LocationGrutadoEscoural"/>
     </owl:NamedIndividual>
     
 
@@ -1947,7 +1941,6 @@ A reabertura ao público ocorreu no dia 30 de Julho de 2011</hasInformation>
 Está inserido numa zona especialmente marcada pelos Descobrimentos portugueses. O nome do jardim é o de Afonso de Albuquerque, governador da Índia entre 1509 e 1515.
 
 O jardim tem uma área de cerca de 1,6 ha de planta quadrangular e simétrica, prolonga-se desde o Palácio Nacional de Belém até à Avenida da Índia. Numa plataforma central circular ergue-se uma estátua de Afonso de Albuquerque. O jardim desenvolve-se em volta, com vários tabuleiros de relva, bancos de pedra e quatro lagos artificiais situados nos quatro cantos do jardim e respeitando a simetria do mesmo.</hasInformation>
-        <hasLocation rdf:resource="&attr;LocationJardimAfonsoAlbuquerque"/>
     </owl:NamedIndividual>
     
 
@@ -1955,7 +1948,6 @@ O jardim tem uma área de cerca de 1,6 ha de planta quadrangular e simétrica, p
     <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#LocationGrutadoEscoural -->
 
     <owl:NamedIndividual rdf:about="&attr;LocationGrutadoEscoural">
-        <rdf:type rdf:resource="&attr;Location"/>
         <hasCoordinates rdf:datatype="&xsd;string">38° 32′ 39″ N, 8° 8′ 16.53″ W</hasCoordinates>
     </owl:NamedIndividual>
     
@@ -1964,7 +1956,6 @@ O jardim tem uma área de cerca de 1,6 ha de planta quadrangular e simétrica, p
     <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#LocationJardimAfonsoAlbuquerque -->
 
     <owl:NamedIndividual rdf:about="&attr;LocationJardimAfonsoAlbuquerque">
-        <rdf:type rdf:resource="&attr;Location"/>
         <hasCoordinates rdf:datatype="&xsd;string">38° 41&apos; 47.03&apos;&apos; N 9° 11&apos; 59.13&apos;&apos; W</hasCoordinates>
     </owl:NamedIndividual>
     
@@ -1973,7 +1964,6 @@ O jardim tem uma área de cerca de 1,6 ha de planta quadrangular e simétrica, p
     <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#LocationMonumentAlmeidaGarrett -->
 
     <owl:NamedIndividual rdf:about="&attr;LocationMonumentAlmeidaGarrett">
-        <rdf:type rdf:resource="&attr;Location"/>
         <hasCoordinates rdf:datatype="&xsd;string">41° 8′ 58.89″ N, 8° 36′ 38.56″ W</hasCoordinates>
     </owl:NamedIndividual>
     
@@ -1995,7 +1985,6 @@ O jardim tem uma área de cerca de 1,6 ha de planta quadrangular e simétrica, p
         <hasInformation rdf:datatype="&xsd;string">O monumento a Almeida Garrett, personalidade marcante do século XIX nascido no Porto, situa-se me frente à Câmara Municipal do Porto, na praça General Humberto Delgado ao cimo da Avenida dos Aliados.
 
 Foi inaugurada em 11 de Novembro de 1954, para assinalar o centenário da morte do poeta, e realizada em bronze pelo escultor Salvador Barata Feyo.</hasInformation>
-        <hasLocation rdf:resource="&attr;LocationMonumentAlmeidaGarrett"/>
     </owl:NamedIndividual>
     
 
@@ -2003,8 +1992,21 @@ Foi inaugurada em 11 de Novembro de 1954, para assinalar o centenário da morte 
     <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#VodafoneSkiAreaLocation -->
 
     <owl:NamedIndividual rdf:about="&attr;VodafoneSkiAreaLocation">
-        <rdf:type rdf:resource="&attr;Location"/>
         <hasCoordinates rdf:datatype="&xsd;string">40° 19′ 25″ N, 7° 36′ 47″ W</hasCoordinates>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#Zoomarine -->
+
+    <owl:NamedIndividual rdf:about="&attr;Zoomarine">
+        <rdf:type rdf:resource="&attr;AmusementPark"/>
+        <hasOpeningTime rdf:datatype="&xsd;string">10h00 - 17h00</hasOpeningTime>
+        <hasArea rdf:datatype="&xsd;double">18.0</hasArea>
+        <hasContact rdf:datatype="&xsd;string">289 560 300</hasContact>
+        <hasOwner rdf:datatype="&xsd;string">Mundo Aquático, SA</hasOwner>
+        <hasInformation rdf:datatype="&xsd;string">O Parque Temático Zoomarine encontra-se situado na Guia (Algarve), distando a poucos quilómetros de Albufeira, e constitui uma das ofertas turísticas mais procuradas da região Algarvia. A sua edificação estende-se actualmente por uma área superior a 18 hectares, onde os visitantes podem usufruir de actividades de lazer, entretenimento e educação ambiental.</hasInformation>
+        <hasWebsite rdf:datatype="&xsd;string">http://www.zoomarine.pt/pt/</hasWebsite>
     </owl:NamedIndividual>
     
 
@@ -2032,25 +2034,6 @@ Foi inaugurada em 11 de Novembro de 1954, para assinalar o centenário da morte 
     <rdf:Description rdf:about="&ontology;data/definitions.xml">
         <terms:describes rdf:resource="&ontology;Building"/>
         <terms:describes rdf:resource="&ontology;Place"/>
-    </rdf:Description>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // General axioms
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    <rdf:Description>
-        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="&attr;Location"/>
-            <rdf:Description rdf:about="&attr;Style"/>
-            <rdf:Description rdf:about="&attr;TouristAttraction"/>
-        </owl:members>
     </rdf:Description>
 </rdf:RDF>
 
