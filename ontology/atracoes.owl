@@ -2,10 +2,13 @@
 
 
 <!DOCTYPE rdf:RDF [
+    <!ENTITY prov "http://www.w3.org/ns/prov#" >
     <!ENTITY terms "http://open.vocab.org/terms/" >
     <!ENTITY ontology "http://dbpedia.org/ontology/" >
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY powder-s "http://www.w3.org/2007/05/powder-s#" >
+    <!ENTITY Building "http://dbpedia.org/ontology/Building/" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
     <!ENTITY attr "http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#" >
@@ -15,7 +18,10 @@
 <rdf:RDF xmlns="http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#"
      xml:base="http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:prov="http://www.w3.org/ns/prov#"
+     xmlns:powder-s="http://www.w3.org/2007/05/powder-s#"
      xmlns:terms="http://open.vocab.org/terms/"
+     xmlns:Building="&ontology;Building/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -25,7 +31,6 @@
         <rdfs:label xml:lang="en">Place</rdfs:label>
         <rdfs:comment xml:lang="en">A tourist attraction ontology.</rdfs:comment>
         <rdfs:comment xml:lang="pt">Ontologia sobre atrações turísticas.</rdfs:comment>
-        <owl:imports rdf:resource="&ontology;Building"/>
     </owl:Ontology>
     
 
@@ -38,6 +43,14 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://dbpedia.org/ontology/address -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;address">
+        <rdfs:domain rdf:resource="&ontology;Building"/>
+    </owl:AnnotationProperty>
     
 
 
@@ -213,6 +226,14 @@
 
     <owl:AnnotationProperty rdf:about="&ontology;budgetYear">
         <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/buildingType -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;buildingType">
+        <rdfs:domain rdf:resource="&ontology;Building"/>
     </owl:AnnotationProperty>
     
 
@@ -393,6 +414,14 @@
     
 
 
+    <!-- http://dbpedia.org/ontology/elevatorCount -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;elevatorCount">
+        <rdfs:domain rdf:resource="&ontology;Building"/>
+    </owl:AnnotationProperty>
+    
+
+
     <!-- http://dbpedia.org/ontology/endangeredSince -->
 
     <owl:AnnotationProperty rdf:about="&ontology;endangeredSince">
@@ -413,6 +442,22 @@
 
     <owl:AnnotationProperty rdf:about="&ontology;fauna">
         <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/floorArea -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;floorArea">
+        <rdfs:domain rdf:resource="&ontology;Building"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/floorCount -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;floorCount">
+        <rdfs:domain rdf:resource="&ontology;Building"/>
     </owl:AnnotationProperty>
     
 
@@ -1105,6 +1150,22 @@
     
 
 
+    <!-- http://dbpedia.org/ontology/seatingCapacity -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;seatingCapacity">
+        <rdfs:domain rdf:resource="&ontology;Building"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/security -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;security">
+        <rdfs:domain rdf:resource="&ontology;Building"/>
+    </owl:AnnotationProperty>
+    
+
+
     <!-- http://dbpedia.org/ontology/settlement -->
 
     <owl:AnnotationProperty rdf:about="&ontology;settlement">
@@ -1161,6 +1222,22 @@
     
 
 
+    <!-- http://dbpedia.org/ontology/space -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;space">
+        <rdfs:domain rdf:resource="&ontology;Building"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/structuralSystem -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;structuralSystem">
+        <rdfs:domain rdf:resource="&ontology;Building"/>
+    </owl:AnnotationProperty>
+    
+
+
     <!-- http://dbpedia.org/ontology/subPrefecture -->
 
     <owl:AnnotationProperty rdf:about="&ontology;subPrefecture">
@@ -1201,10 +1278,26 @@
     
 
 
+    <!-- http://dbpedia.org/ontology/tenant -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;tenant">
+        <rdfs:domain rdf:resource="&ontology;Building"/>
+    </owl:AnnotationProperty>
+    
+
+
     <!-- http://dbpedia.org/ontology/timeZone -->
 
     <owl:AnnotationProperty rdf:about="&ontology;timeZone">
         <rdfs:domain rdf:resource="&ontology;Place"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/towerHeight -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;towerHeight">
+        <rdfs:domain rdf:resource="&ontology;Building"/>
     </owl:AnnotationProperty>
     
 
@@ -1313,11 +1406,51 @@
     
 
 
+    <!-- http://dbpedia.org/ontology/workArea -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;workArea">
+        <rdfs:domain rdf:resource="&ontology;Building"/>
+    </owl:AnnotationProperty>
+    
+
+
     <!-- http://dbpedia.org/ontology/yearOfConstruction -->
 
     <owl:AnnotationProperty rdf:about="&ontology;yearOfConstruction">
         <rdfs:domain rdf:resource="&ontology;Place"/>
     </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Building/floorArea -->
+
+    <owl:AnnotationProperty rdf:about="&ontology;Building/floorArea">
+        <rdfs:domain rdf:resource="&ontology;Building"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://open.vocab.org/terms/defines -->
+
+    <owl:AnnotationProperty rdf:about="&terms;defines"/>
+    
+
+
+    <!-- http://open.vocab.org/terms/describes -->
+
+    <owl:AnnotationProperty rdf:about="&terms;describes"/>
+    
+
+
+    <!-- http://www.w3.org/2007/05/powder-s#describedby -->
+
+    <owl:AnnotationProperty rdf:about="&powder-s;describedby"/>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#wasDerivedFrom -->
+
+    <owl:AnnotationProperty rdf:about="&prov;wasDerivedFrom"/>
     
 
 
@@ -1344,18 +1477,17 @@
     <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#hasAttraction -->
 
     <owl:ObjectProperty rdf:about="&attr;hasAttraction">
-        <rdfs:domain rdf:resource="&attr;Location"/>
+        <rdfs:domain rdf:resource="&attr;District"/>
         <rdfs:range rdf:resource="&attr;TouristAttraction"/>
-        <owl:inverseOf rdf:resource="&attr;hasLocation"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#hasLocation -->
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#hasDistrict -->
 
-    <owl:ObjectProperty rdf:about="&attr;hasLocation">
+    <owl:ObjectProperty rdf:about="&attr;hasDistrict">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:range rdf:resource="&attr;Location"/>
+        <rdfs:range rdf:resource="&attr;District"/>
         <rdfs:domain rdf:resource="&attr;TouristAttraction"/>
     </owl:ObjectProperty>
     
@@ -1374,8 +1506,6 @@
 
     <owl:ObjectProperty rdf:about="&attr;hasStyle">
         <rdfs:domain rdf:resource="&ontology;Building"/>
-        <rdfs:domain rdf:resource="&ontology;Garden"/>
-        <rdfs:domain rdf:resource="&ontology;Monument"/>
         <rdfs:range rdf:resource="&attr;Style"/>
     </owl:ObjectProperty>
     
@@ -1384,8 +1514,8 @@
     <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#isManagedBy -->
 
     <owl:ObjectProperty rdf:about="&attr;isManagedBy">
-        <rdfs:domain rdf:resource="&ontology;ProtectedArea"/>
         <rdfs:range rdf:resource="&attr;Organization"/>
+        <rdfs:domain rdf:resource="&attr;TouristAttraction"/>
     </owl:ObjectProperty>
     
 
@@ -1401,15 +1531,18 @@
     
 
 
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#hasAlternativeName -->
+
+    <owl:DatatypeProperty rdf:about="&attr;hasAlternativeName"/>
+    
+
+
     <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#hasArea -->
 
     <owl:DatatypeProperty rdf:about="&attr;hasArea">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:comment xml:lang="en">Area in hectares.</rdfs:comment>
-        <rdfs:domain rdf:resource="&ontology;Garden"/>
-        <rdfs:domain rdf:resource="&ontology;ProtectedArea"/>
-        <rdfs:domain rdf:resource="&ontology;SkiArea"/>
-        <rdfs:domain rdf:resource="&attr;AmusementPark"/>
+        <rdfs:domain rdf:resource="&attr;TouristAttraction"/>
         <rdfs:range rdf:resource="&xsd;double"/>
     </owl:DatatypeProperty>
     
@@ -1419,10 +1552,8 @@
 
     <owl:DatatypeProperty rdf:about="&attr;hasConstructionDate">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:domain rdf:resource="&ontology;Building"/>
-        <rdfs:domain rdf:resource="&ontology;Monument"/>
-        <rdfs:domain rdf:resource="&ontology;SkiArea"/>
-        <rdfs:range rdf:resource="&xsd;dateTime"/>
+        <rdfs:domain rdf:resource="&attr;TouristAttraction"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
 
@@ -1440,7 +1571,7 @@
 
     <owl:DatatypeProperty rdf:about="&attr;hasCoordinates">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:domain rdf:resource="&attr;Location"/>
+        <rdfs:domain rdf:resource="&attr;TouristAttraction"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -1465,10 +1596,10 @@
     
 
 
-    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#hasName -->
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#hasMuseumType -->
 
-    <owl:DatatypeProperty rdf:about="&attr;hasName">
-        <rdfs:domain rdf:resource="&attr;TouristAttraction"/>
+    <owl:DatatypeProperty rdf:about="&attr;hasMuseumType">
+        <rdfs:domain rdf:resource="&ontology;Museum"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -1532,9 +1663,33 @@
 
     <!-- http://dbpedia.org/ontology/Building -->
 
-    <rdf:Description rdf:about="&ontology;Building">
+    <owl:Class rdf:about="&ontology;Building">
+        <rdfs:label xml:lang="de">Gebäude</rdfs:label>
+        <rdfs:label xml:lang="el">κτίριο</rdfs:label>
+        <rdfs:label xml:lang="en">building</rdfs:label>
+        <rdfs:label xml:lang="es">edificio</rdfs:label>
+        <rdfs:label xml:lang="fr">bâtiment</rdfs:label>
+        <rdfs:label xml:lang="it">edificio</rdfs:label>
+        <rdfs:label xml:lang="ja">建築部</rdfs:label>
+        <rdfs:label xml:lang="nl">gebouw</rdfs:label>
+        <rdfs:label xml:lang="sl">stavba</rdfs:label>
         <rdfs:subClassOf rdf:resource="&attr;TouristAttraction"/>
-    </rdf:Description>
+        <rdfs:comment xml:lang="de">Ein Gebäude, umgangssprachlich auch oft als Haus bezeichnet, ist ein Bauwerk, das Räume umschließt, betreten werden kann und zum Schutz von Menschen, Tieren oder Sachen dient (http://de.wikipedia.org/wiki/Geb%C3%A4ude).</rdfs:comment>
+        <rdfs:comment xml:lang="en">Building is defined as a Civil Engineering structure such as a house, worship center, factory etc. that has a foundation, wall, roof etc. that protect human being and their properties from direct harsh effect of weather like rain, wind, sun etc. (http://en.wikipedia.org/wiki/Building).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://dbpedia.org/ontology/"/>
+        <powder-s:describedby rdf:resource="&ontology;data/definitions.jsonld"/>
+        <powder-s:describedby rdf:resource="&ontology;data/definitions.ttl"/>
+        <powder-s:describedby rdf:resource="&ontology;data/definitions.xml"/>
+        <prov:wasDerivedFrom rdf:resource="http://mappings.dbpedia.org/index.php/OntologyClass:Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Castle -->
+
+    <owl:Class rdf:about="&ontology;Castle">
+        <rdfs:subClassOf rdf:resource="&ontology;Building"/>
+    </owl:Class>
     
 
 
@@ -1550,6 +1705,7 @@
 
     <owl:Class rdf:about="&ontology;Monastery">
         <rdfs:subClassOf rdf:resource="&ontology;ReligiousBuilding"/>
+        <owl:disjointWith rdf:resource="&attr;Church"/>
     </owl:Class>
     
 
@@ -1562,10 +1718,26 @@
     
 
 
+    <!-- http://dbpedia.org/ontology/Museum -->
+
+    <owl:Class rdf:about="&ontology;Museum">
+        <rdfs:subClassOf rdf:resource="&ontology;Building"/>
+    </owl:Class>
+    
+
+
     <!-- http://dbpedia.org/ontology/ProtectedArea -->
 
     <owl:Class rdf:about="&ontology;ProtectedArea">
         <rdfs:subClassOf rdf:resource="&attr;TouristAttraction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dbpedia.org/ontology/ReligiousBuilding -->
+
+    <owl:Class rdf:about="&ontology;ReligiousBuilding">
+        <rdfs:subClassOf rdf:resource="&ontology;Building"/>
     </owl:Class>
     
 
@@ -1608,17 +1780,9 @@
     
 
 
-    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#City -->
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#District -->
 
-    <owl:Class rdf:about="&attr;City">
-        <rdfs:subClassOf rdf:resource="&attr;Location"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#Location -->
-
-    <owl:Class rdf:about="&attr;Location"/>
+    <owl:Class rdf:about="&attr;District"/>
     
 
 
@@ -1626,6 +1790,7 @@
 
     <owl:Class rdf:about="&attr;NaturalPark">
         <rdfs:subClassOf rdf:resource="&ontology;ProtectedArea"/>
+        <owl:disjointWith rdf:resource="&attr;NaturalReserve"/>
     </owl:Class>
     
 
@@ -1673,9 +1838,416 @@
     
 
 
-    <!-- http://dbpedia.org/ontology/Place -->
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#Arte_Nova -->
 
-    <rdf:Description rdf:about="&ontology;Place"/>
+    <owl:NamedIndividual rdf:about="&attr;Arte_Nova">
+        <rdf:type rdf:resource="&attr;Style"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#Barroco -->
+
+    <owl:NamedIndividual rdf:about="&attr;Barroco">
+        <rdf:type rdf:resource="&attr;Style"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#Bragança -->
+
+    <owl:NamedIndividual rdf:about="&attr;Bragança">
+        <rdf:type rdf:resource="&attr;District"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#Castelo_Branco -->
+
+    <owl:NamedIndividual rdf:about="&attr;Castelo_Branco">
+        <rdf:type rdf:resource="&attr;District"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#Castelo_da_Sertã -->
+
+    <owl:NamedIndividual rdf:about="&attr;Castelo_da_Sertã">
+        <rdf:type rdf:resource="&ontology;Castle"/>
+        <hasOpeningTime rdf:datatype="&xsd;string">9h00 - 17h00</hasOpeningTime>
+        <hasInformation rdf:datatype="&xsd;string">O Castelo da Sertã localiza-se na vila, freguesia e concelho de mesmo nome, distrito de Castelo Branco, em Portugal.</hasInformation>
+        <hasConstructionDate rdf:datatype="&xsd;string">Século XI ou XII</hasConstructionDate>
+        <hasStyle rdf:resource="&attr;Românico"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#Castelo_de_Monforte -->
+
+    <owl:NamedIndividual rdf:about="&attr;Castelo_de_Monforte">
+        <rdf:type rdf:resource="&ontology;Castle"/>
+        <hasConstructionDate rdf:datatype="&xsd;string">1309</hasConstructionDate>
+        <hasCoordinates rdf:datatype="&xsd;string">41° 45′ 44.52″ N, 7° 21′ 22.08″ W</hasCoordinates>
+        <hasOpeningTime rdf:datatype="&xsd;string">9h00 - 18h00</hasOpeningTime>
+        <hasInformation rdf:datatype="&xsd;string">O Castelo de Monforte, no Alto Alentejo, localiza-se na Freguesia e Concelho de Monforte, Distrito de Portalegre, em Portugal.
+
+Em posição dominante sobre a povoação que lhe dá o nome, juntamente com os castelos de Veiros, Campo Maior e de Ouguela, tinham como primitiva função a defesa da fronteira com os Mouros e com Castela. Atualmente a povoação inscreve-se na Área Turístico-Promocional de Planícies.</hasInformation>
+        <hasStyle rdf:resource="&attr;Gótico"/>
+        <isManagedBy rdf:resource="&attr;IHRU"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#Catolica_Romana -->
+
+    <owl:NamedIndividual rdf:about="&attr;Catolica_Romana">
+        <rdf:type rdf:resource="&attr;Religion"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#Classicismo -->
+
+    <owl:NamedIndividual rdf:about="&attr;Classicismo">
+        <rdf:type rdf:resource="&attr;Style"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#Diocese_de_Bragança-Miranda -->
+
+    <owl:NamedIndividual rdf:about="&attr;Diocese_de_Bragança-Miranda">
+        <rdf:type rdf:resource="&attr;Organization"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#Diocese_do_Porto -->
+
+    <owl:NamedIndividual rdf:about="&attr;Diocese_do_Porto">
+        <rdf:type rdf:resource="&attr;Organization"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#Diogo_de_Boitaca -->
+
+    <owl:NamedIndividual rdf:about="&attr;Diogo_de_Boitaca">
+        <rdf:type rdf:resource="&attr;District"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#Estância_de_Esqui_Vodafone -->
+
+    <owl:NamedIndividual rdf:about="&attr;Estância_de_Esqui_Vodafone">
+        <rdf:type rdf:resource="&ontology;SkiArea"/>
+        <hasContact rdf:datatype="&xsd;string">(+351) 275 314 727</hasContact>
+        <hasOpeningTime rdf:datatype="&xsd;string">09:00 - 17:00</hasOpeningTime>
+        <hasNumberOfTracks rdf:datatype="&xsd;unsignedInt">19</hasNumberOfTracks>
+        <hasInformation rdf:datatype="&xsd;string">A Estância de Esqui Vodafone é uma estância de esqui situada na freguesia de Loriga, Serra da Estrela, município de Seia, Distrito da Guarda, Portugal.
+
+Descrição
+Esta pequena estância de esqui está localizada na Serra da Estrela, próxima à Torre, o ponto mais elevado de Portugal continental, situada no município de Seia, dentro do Parque Natural da Serra da Estrela e da freguesia de Loriga, a uma altitude aproximada de 2.000 metros, na parte mais alta. A área urbana mais próxima da estância é a cidade da Covilhã, distante cerca de 20 km, e os alojamentos mais próximos estão situados na localidade de Penhas da Saúde, a cerca de 10 minutos de distância.
+
+Coberta por um manto de neve de Dezembro a Abril, auxiliada também por canhões que produzem neve artificial, a estação de esqui possui infra-estruturas para a prática de desportos de inverno e modernas telecadeiras. É possível alugar equipamentos para a prática de esqui e snowboard neste local.
+
+Esta estância de esqui possui 9 pistas, com um total de 7,7 km, consideradas boas para esquiadores iniciantes, mas também há pistas para esquiadores mais avançados. Sua cota mínima é de 1.854 metros de altitude, e a máxima é de 1.984 m.
+
+Desde 2005, a empresa britânica de telecomunicações Vodafone tem patrocinado a estância de esqui e também tem sido responsável por melhorias na mesma.</hasInformation>
+        <hasWebsite rdf:datatype="&xsd;string">http://www.skiserradaestrela.com/</hasWebsite>
+        <hasDistrict rdf:resource="&attr;Guarda"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#Faro -->
+
+    <owl:NamedIndividual rdf:about="&attr;Faro">
+        <rdf:type rdf:resource="&attr;District"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#Fundação_EDP -->
+
+    <owl:NamedIndividual rdf:about="&attr;Fundação_EDP">
+        <rdf:type rdf:resource="&attr;Organization"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#Gonçalo_de_Torralva -->
+
+    <owl:NamedIndividual rdf:about="&attr;Gonçalo_de_Torralva">
+        <rdf:type rdf:resource="&attr;Architect"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#Gruta_do_Escoural -->
+
+    <owl:NamedIndividual rdf:about="&attr;Gruta_do_Escoural">
+        <rdf:type rdf:resource="&attr;Cavern"/>
+        <hasInformation rdf:datatype="&xsd;string">A Gruta do Escoural é uma cavidade natural conhecida pela arte rupestre paleolítica e enterros, localizada no município alentejano de Montemor-o-Novo, em Portugal.
+Está classificada como Monumento Nacional desde 1963.
+
+Características
+
+Contra-capa do livro de António Carlos Silva: &quot;Uma gruta pré-histórica no Alentejo - Escoural&quot;
+Geologicamente, o sítio está localizado entre as bacias hidrográficas do Tejo, o rio Sado, e da região das planícies alentejanas, na Serra de Monfurado de onde ainda é possível avistar a Serra da Arrábida.
+
+Parcialmente selada por um espesso manto de estalagmite, a gruta é composta de várias salas e galerias. A primeira ocupação da gruta remonta ao Paleolítico Médio, quando grupos de caçadores-coletores Neanderthal usaram-na como abrigo temporário para a prática da caça. Com base em provas ósseas no interior da gruta, estes grupos caçavam nas proximidades auroques, cervos e cavalos. Mais tarde, durante o período Paleolítico Superior (35000-8000 a.C.), os residentes constituídos por grupos anatomicamente considerados modernos fizeram sua marca na caverna.
+
+A sua influência é evidenciada por uma rocha santuário contendo pinturas de animais contemporâneos ao período Paleolítico Superior. Mais tarde, quando da emergência do Neolítico (5000-3000 a.C.), as comunidades de agricultores e pastores tiraram aproveitamento desta cavidade natural como cemitério para os seus mortos. No final do neolítico a gruta ficou encerrada mas as populações do Calcolítico (3000 a.C.) continuaram na região, a cerca de 600 metros encontra-se um povoado fortificado bem como outros povoados calcolíticos e um tolo megalítico.
+
+Actualidade
+Em 2009 foi sujeita a obras de requalificação num investimento de 350 mil euros ficando então suspensas as visitas às grutas e ao centro interpretativo.
+
+As obras dotaram as grutas de um conjunto de condições, a nível ambiental, para preservação dos vestígios gráficos de gravura e pintura. Será construído um centro de acolhimento, que desemboca no monumento, protegendo as condições ambientais dentro das grutas.
+
+No interior das grutas, o plano de requalificação previu uma reestruturação dos passadiços e da iluminação, sendo que no espaço envolvente ao monumento foi construido um novo parque de estacionamento.1
+
+A reabertura ao público ocorreu no dia 30 de Julho de 2011</hasInformation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#Guarda -->
+
+    <owl:NamedIndividual rdf:about="&attr;Guarda">
+        <rdf:type rdf:resource="&attr;District"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#Gótico -->
+
+    <owl:NamedIndividual rdf:about="&attr;Gótico">
+        <rdf:type rdf:resource="&attr;Style"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#IHRU -->
+
+    <owl:NamedIndividual rdf:about="&attr;IHRU">
+        <rdf:type rdf:resource="&attr;Organization"/>
+        <rdfs:label xml:lang="pt">Instituto da Habitação e Reabilitação Urbana</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#Igreja_de_Miranda_do_Douro -->
+
+    <owl:NamedIndividual rdf:about="&attr;Igreja_de_Miranda_do_Douro">
+        <rdf:type rdf:resource="&attr;Church"/>
+        <hasConstructionDate rdf:datatype="&xsd;string">1552</hasConstructionDate>
+        <hasCoordinates rdf:datatype="&xsd;string">41° 29′ 36″ N, 6° 16′ 25″ W</hasCoordinates>
+        <hasInformation rdf:datatype="&xsd;string">A Igreja de Miranda do Douro, antiga Sé de Miranda do Douro, é um templo católico localizado na cidade de Miranda do Douro, nordeste de Portugal.</hasInformation>
+        <hasAlternativeName rdf:datatype="&xsd;string">Catedral de Miranda</hasAlternativeName>
+        <hasAlternativeName rdf:datatype="&xsd;string">Igreja de Santa Maria Maior</hasAlternativeName>
+        <hasDistrict rdf:resource="&attr;Bragança"/>
+        <hasReligion rdf:resource="&attr;Catolica_Romana"/>
+        <isManagedBy rdf:resource="&attr;Diocese_de_Bragança-Miranda"/>
+        <hasArchitect rdf:resource="&attr;Gonçalo_de_Torralva"/>
+        <hasStyle rdf:resource="&attr;Maneirista"/>
+        <hasArchitect rdf:resource="&attr;Miguel_de_Arruda"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#Jardim_Afonso_de_Albuquerque -->
+
+    <owl:NamedIndividual rdf:about="&attr;Jardim_Afonso_de_Albuquerque">
+        <rdf:type rdf:resource="&ontology;Garden"/>
+        <hasArea rdf:datatype="&xsd;double">1.6</hasArea>
+        <hasInformation rdf:datatype="&xsd;string">O Jardim Afonso de Albuquerque é um jardim situado na Praça Afonso de Albuquerque, na freguesia de Santa Maria de Belém, em Lisboa.
+
+Está inserido numa zona especialmente marcada pelos Descobrimentos portugueses. O nome do jardim é o de Afonso de Albuquerque, governador da Índia entre 1509 e 1515.
+
+O jardim tem uma área de cerca de 1,6 ha de planta quadrangular e simétrica, prolonga-se desde o Palácio Nacional de Belém até à Avenida da Índia. Numa plataforma central circular ergue-se uma estátua de Afonso de Albuquerque. O jardim desenvolve-se em volta, com vários tabuleiros de relva, bancos de pedra e quatro lagos artificiais situados nos quatro cantos do jardim e respeitando a simetria do mesmo.</hasInformation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#Jerónimo_de_Ruão -->
+
+    <owl:NamedIndividual rdf:about="&attr;Jerónimo_de_Ruão">
+        <rdf:type rdf:resource="&attr;District"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#João_de_Castilho -->
+
+    <owl:NamedIndividual rdf:about="&attr;João_de_Castilho">
+        <rdf:type rdf:resource="&attr;District"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#Lisboa -->
+
+    <owl:NamedIndividual rdf:about="&attr;Lisboa">
+        <rdf:type rdf:resource="&attr;District"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#Maneirista -->
+
+    <owl:NamedIndividual rdf:about="&attr;Maneirista">
+        <rdf:type rdf:resource="&attr;Style"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#Manuelino -->
+
+    <owl:NamedIndividual rdf:about="&attr;Manuelino">
+        <rdf:type rdf:resource="&attr;Style"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#Miguel_de_Arruda -->
+
+    <owl:NamedIndividual rdf:about="&attr;Miguel_de_Arruda">
+        <rdf:type rdf:resource="&attr;Architect"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#Monumento_Almeida_Garrett -->
+
+    <owl:NamedIndividual rdf:about="&attr;Monumento_Almeida_Garrett">
+        <rdf:type rdf:resource="&ontology;Monument"/>
+        <hasConstructionDate rdf:datatype="&xsd;string">1954</hasConstructionDate>
+        <hasCoordinates rdf:datatype="&xsd;string">41° 8′ 58.89″ N, 8° 36′ 38.56″ W</hasCoordinates>
+        <hasInformation rdf:datatype="&xsd;string">O monumento a Almeida Garrett, personalidade marcante do século XIX nascido no Porto, situa-se me frente à Câmara Municipal do Porto, na praça General Humberto Delgado ao cimo da Avenida dos Aliados.
+
+Foi inaugurada em 11 de Novembro de 1954, para assinalar o centenário da morte do poeta, e realizada em bronze pelo escultor Salvador Barata Feyo.</hasInformation>
+        <hasDistrict rdf:resource="&attr;Porto"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#Mosteiro_dos_Jeronimos -->
+
+    <owl:NamedIndividual rdf:about="&attr;Mosteiro_dos_Jeronimos">
+        <rdf:type rdf:resource="&ontology;Monastery"/>
+        <hasConstructionDate rdf:datatype="&xsd;string">1502</hasConstructionDate>
+        <hasCoordinates rdf:datatype="&xsd;string">38° 41′ 52″ N, 9° 12′ 24″ W</hasCoordinates>
+        <hasAlternativeName rdf:datatype="&xsd;string">Mosteiro de Santa Maria de Belém</hasAlternativeName>
+        <hasInformation rdf:datatype="&xsd;string">Mosteiro dos Jerónimos ou Mosteiro de Santa Maria de Belém é um mosteiro português do século XVI. Situa-se em Belém, Lisboa, perto do estuário do Rio Tejo.</hasInformation>
+        <hasArchitect rdf:resource="&attr;Diogo_de_Boitaca"/>
+        <hasArchitect rdf:resource="&attr;Jerónimo_de_Ruão"/>
+        <hasArchitect rdf:resource="&attr;João_de_Castilho"/>
+        <hasDistrict rdf:resource="&attr;Lisboa"/>
+        <hasStyle rdf:resource="&attr;Manuelino"/>
+        <isManagedBy rdf:resource="&attr;Patriarcado_de_Lisboa"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#Museu_Nacional_de_Soares_dos_Reis -->
+
+    <owl:NamedIndividual rdf:about="&attr;Museu_Nacional_de_Soares_dos_Reis">
+        <rdf:type rdf:resource="&ontology;Museum"/>
+        <hasContact rdf:datatype="&xsd;string">+351 223 393 770</hasContact>
+        <hasOpeningTime rdf:datatype="&xsd;string">14h00 - 18h00</hasOpeningTime>
+        <hasConstructionDate rdf:datatype="&xsd;string">1833</hasConstructionDate>
+        <hasCoordinates rdf:datatype="&xsd;string">41° 8′ 51.75″ N, 8° 37′ 17.58″ W</hasCoordinates>
+        <hasMuseumType rdf:datatype="&xsd;string">Arte e Artes decorativas do séc. XIX e início do séc. XX</hasMuseumType>
+        <hasInformation rdf:datatype="&xsd;string">O Museu Nacional de Soares dos Reis é o primeiro museu público de arte do país, tendo sido fundado em 1833 sob a égide do liberalismo. Destinou-se a recolher os bens confiscados aos conventos abandonados do Porto e aos extintos de fora do Porto (mosteiros de S. Martinho de Tibães e de Santa Cruz de Coimbra). O saque decorreu durante a guerra civil que opôs absolutistas e liberais, chefiados pelo regente D. Pedro, duque de Bragança.</hasInformation>
+        <hasWebsite rdf:datatype="&xsd;string">http://mnsr.imc-ip.pt/</hasWebsite>
+        <hasDistrict rdf:resource="&attr;Porto"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#Museu_da_Electricidade -->
+
+    <owl:NamedIndividual rdf:about="&attr;Museu_da_Electricidade">
+        <rdf:type rdf:resource="&ontology;Museum"/>
+        <hasConstructionDate rdf:datatype="&xsd;string">1990</hasConstructionDate>
+        <hasMuseumType rdf:datatype="&xsd;string">Ciência e Arqueologia Industrial</hasMuseumType>
+        <hasInformation rdf:datatype="&xsd;string">O Museu da Electricidade pertencente à Fundação EDP e localiza-se na antiga Central Tejo, Av. de Brasília, Lisboa.
+
+O museu apresenta nos seus espaços, o passado, o presente e o futuro das Energias, num conceito de Museu de Ciência e de Arqueologia industrial, onde convivem lado a lado exposições temáticas e experimentais, com os mais variados eventos culturais e empresariais. Está situado na zona de Belém, em terrenos conquistados por Lisboa ao rio Tejo no final do século XIX, numa das zonas de maior monumentalidade histórica da cidade onde podemos encontrar, entre outros, o Mosteiro dos Jerónimos, o Centro Cultural de Belém, a Torre de Belém, o Padrão dos Descobrimentos, o Palácio e Museu da Presidência da República Portuguesa, ou a Cordoaria Nacional. Edifício classificado de Imóvel de Interesse Público,2 o Museu da Electricidade desenvolve-se no perímetro da antiga central termoeléctrica - Central Tejo, que iluminou a cidade de Lisboa durante mais de quatro décadas.</hasInformation>
+        <hasWebsite rdf:datatype="&xsd;string">http://www.fundacaoedp.pt/museu-da-eletricidade/</hasWebsite>
+        <hasStyle rdf:resource="&attr;Arte_Nova"/>
+        <hasStyle rdf:resource="&attr;Classicismo"/>
+        <isManagedBy rdf:resource="&attr;Fundação_EDP"/>
+        <hasDistrict rdf:resource="&attr;Lisboa"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#Patriarcado_de_Lisboa -->
+
+    <owl:NamedIndividual rdf:about="&attr;Patriarcado_de_Lisboa">
+        <rdf:type rdf:resource="&attr;Organization"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#Portalegre -->
+
+    <owl:NamedIndividual rdf:about="&attr;Portalegre">
+        <rdf:type rdf:resource="&attr;District"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#Porto -->
+
+    <owl:NamedIndividual rdf:about="&attr;Porto">
+        <rdf:type rdf:resource="&attr;District"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#Românico -->
+
+    <owl:NamedIndividual rdf:about="&attr;Românico">
+        <rdf:type rdf:resource="&attr;Style"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#Sé_Catedral_do_Porto -->
+
+    <owl:NamedIndividual rdf:about="&attr;Sé_Catedral_do_Porto">
+        <rdf:type rdf:resource="&attr;Church"/>
+        <hasCoordinates rdf:datatype="&xsd;string">41° 8′ 34″ N, 8° 36′ 41″ W</hasCoordinates>
+        <hasInformation rdf:datatype="&xsd;string">A Sé Catedral da cidade do Porto, situada no coração do centro histórico da cidade do Porto, é um dos principais e mais antigos monumentos de Portugal.</hasInformation>
+        <hasAlternativeName rdf:datatype="&xsd;string">Igreja de Nossa Senhora da Assunção</hasAlternativeName>
+        <hasConstructionDate rdf:datatype="&xsd;string">Século XII</hasConstructionDate>
+        <hasWebsite rdf:datatype="&xsd;string">http://www.diocese-porto.pt/index.php?option=com_content&amp;view=article&amp;id=877:igreja-da-se-catedral-do-porto</hasWebsite>
+        <hasStyle rdf:resource="&attr;Barroco"/>
+        <hasReligion rdf:resource="&attr;Catolica_Romana"/>
+        <isManagedBy rdf:resource="&attr;Diocese_do_Porto"/>
+        <hasStyle rdf:resource="&attr;Gótico"/>
+        <hasDistrict rdf:resource="&attr;Porto"/>
+        <hasStyle rdf:resource="&attr;Românico"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#Zoomarine -->
+
+    <owl:NamedIndividual rdf:about="&attr;Zoomarine">
+        <rdf:type rdf:resource="&attr;AmusementPark"/>
+        <hasOpeningTime rdf:datatype="&xsd;string">10h00 - 17h00</hasOpeningTime>
+        <hasArea rdf:datatype="&xsd;double">18.0</hasArea>
+        <hasContact rdf:datatype="&xsd;string">289 560 300</hasContact>
+        <hasOwner rdf:datatype="&xsd;string">Mundo Aquático, SA</hasOwner>
+        <hasInformation rdf:datatype="&xsd;string">O Parque Temático Zoomarine encontra-se situado na Guia (Algarve), distando a poucos quilómetros de Albufeira, e constitui uma das ofertas turísticas mais procuradas da região Algarvia. A sua edificação estende-se actualmente por uma área superior a 18 hectares, onde os visitantes podem usufruir de actividades de lazer, entretenimento e educação ambiental.</hasInformation>
+        <hasWebsite rdf:datatype="&xsd;string">http://www.zoomarine.pt/pt/</hasWebsite>
+        <hasDistrict rdf:resource="&attr;Faro"/>
+    </owl:NamedIndividual>
     
 
 
@@ -1688,15 +2260,19 @@
      -->
 
     <rdf:Description rdf:about="&ontology;data/definitions.jsonld">
+        <terms:describes rdf:resource="&ontology;Building"/>
         <terms:describes rdf:resource="&ontology;Place"/>
     </rdf:Description>
     <rdf:Description rdf:about="&ontology;data/definitions.ttl">
+        <terms:describes rdf:resource="&ontology;Building"/>
         <terms:describes rdf:resource="&ontology;Place"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://dbpedia.org/ontology/">
+        <terms:defines rdf:resource="&ontology;Building"/>
         <terms:defines rdf:resource="&ontology;Place"/>
     </rdf:Description>
     <rdf:Description rdf:about="&ontology;data/definitions.xml">
+        <terms:describes rdf:resource="&ontology;Building"/>
         <terms:describes rdf:resource="&ontology;Place"/>
     </rdf:Description>
     
@@ -1713,14 +2289,26 @@
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="&attr;Location"/>
-            <rdf:Description rdf:about="&attr;Style"/>
-            <rdf:Description rdf:about="&attr;TouristAttraction"/>
+            <rdf:Description rdf:about="&ontology;Castle"/>
+            <rdf:Description rdf:about="&ontology;Museum"/>
+            <rdf:Description rdf:about="&ontology;ReligiousBuilding"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&ontology;Building"/>
+            <rdf:Description rdf:about="&ontology;Garden"/>
+            <rdf:Description rdf:about="&ontology;Monument"/>
+            <rdf:Description rdf:about="&ontology;ProtectedArea"/>
+            <rdf:Description rdf:about="&ontology;SkiArea"/>
+            <rdf:Description rdf:about="&attr;AmusementPark"/>
+            <rdf:Description rdf:about="&attr;Cavern"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>
 
 
 
-<!-- Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net -->
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
 
