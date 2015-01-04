@@ -1605,6 +1605,15 @@
     
 
 
+    <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#hasName -->
+
+    <owl:DatatypeProperty rdf:about="&attr;hasName">
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&owl;Thing"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#hasNumberOfTracks -->
 
     <owl:DatatypeProperty rdf:about="&attr;hasNumberOfTracks">
@@ -1842,6 +1851,7 @@
 
     <owl:NamedIndividual rdf:about="&attr;Arte_Nova">
         <rdf:type rdf:resource="&attr;Style"/>
+        <hasName rdf:datatype="&xsd;string">Arte Nova</hasName>
     </owl:NamedIndividual>
     
 
@@ -1850,6 +1860,7 @@
 
     <owl:NamedIndividual rdf:about="&attr;Barroco">
         <rdf:type rdf:resource="&attr;Style"/>
+        <hasName rdf:datatype="&xsd;string">Barroco</hasName>
     </owl:NamedIndividual>
     
 
@@ -1858,6 +1869,7 @@
 
     <owl:NamedIndividual rdf:about="&attr;Bragança">
         <rdf:type rdf:resource="&attr;District"/>
+        <hasName rdf:datatype="&xsd;string">Bragança</hasName>
     </owl:NamedIndividual>
     
 
@@ -1866,6 +1878,7 @@
 
     <owl:NamedIndividual rdf:about="&attr;Castelo_Branco">
         <rdf:type rdf:resource="&attr;District"/>
+        <hasName rdf:datatype="&xsd;string">Castelo Branco</hasName>
     </owl:NamedIndividual>
     
 
@@ -1875,6 +1888,7 @@
     <owl:NamedIndividual rdf:about="&attr;Castelo_da_Sertã">
         <rdf:type rdf:resource="&ontology;Castle"/>
         <hasOpeningTime rdf:datatype="&xsd;string">9h00 - 17h00</hasOpeningTime>
+        <hasName rdf:datatype="&xsd;string">Castelo da Sertã</hasName>
         <hasInformation rdf:datatype="&xsd;string">O Castelo da Sertã localiza-se na vila, freguesia e concelho de mesmo nome, distrito de Castelo Branco, em Portugal.</hasInformation>
         <hasConstructionDate rdf:datatype="&xsd;string">Século XI ou XII</hasConstructionDate>
         <hasStyle rdf:resource="&attr;Românico"/>
@@ -1889,6 +1903,7 @@
         <hasConstructionDate rdf:datatype="&xsd;string">1309</hasConstructionDate>
         <hasCoordinates rdf:datatype="&xsd;string">41° 45′ 44.52″ N, 7° 21′ 22.08″ W</hasCoordinates>
         <hasOpeningTime rdf:datatype="&xsd;string">9h00 - 18h00</hasOpeningTime>
+        <hasName rdf:datatype="&xsd;string">Castelo de Monforte</hasName>
         <hasInformation rdf:datatype="&xsd;string">O Castelo de Monforte, no Alto Alentejo, localiza-se na Freguesia e Concelho de Monforte, Distrito de Portalegre, em Portugal.
 
 Em posição dominante sobre a povoação que lhe dá o nome, juntamente com os castelos de Veiros, Campo Maior e de Ouguela, tinham como primitiva função a defesa da fronteira com os Mouros e com Castela. Atualmente a povoação inscreve-se na Área Turístico-Promocional de Planícies.</hasInformation>
@@ -1902,6 +1917,7 @@ Em posição dominante sobre a povoação que lhe dá o nome, juntamente com os 
 
     <owl:NamedIndividual rdf:about="&attr;Catolica_Romana">
         <rdf:type rdf:resource="&attr;Religion"/>
+        <hasName rdf:datatype="&xsd;string">Católica Romana</hasName>
     </owl:NamedIndividual>
     
 
@@ -1910,6 +1926,7 @@ Em posição dominante sobre a povoação que lhe dá o nome, juntamente com os 
 
     <owl:NamedIndividual rdf:about="&attr;Classicismo">
         <rdf:type rdf:resource="&attr;Style"/>
+        <hasName rdf:datatype="&xsd;string">Classicismo</hasName>
     </owl:NamedIndividual>
     
 
@@ -1918,6 +1935,7 @@ Em posição dominante sobre a povoação que lhe dá o nome, juntamente com os 
 
     <owl:NamedIndividual rdf:about="&attr;Diocese_de_Bragança-Miranda">
         <rdf:type rdf:resource="&attr;Organization"/>
+        <hasName rdf:datatype="&xsd;string">Diocese de Bragança</hasName>
     </owl:NamedIndividual>
     
 
@@ -1926,6 +1944,7 @@ Em posição dominante sobre a povoação que lhe dá o nome, juntamente com os 
 
     <owl:NamedIndividual rdf:about="&attr;Diocese_do_Porto">
         <rdf:type rdf:resource="&attr;Organization"/>
+        <hasName rdf:datatype="&xsd;string">Diocese do Porto</hasName>
     </owl:NamedIndividual>
     
 
@@ -1933,7 +1952,8 @@ Em posição dominante sobre a povoação que lhe dá o nome, juntamente com os 
     <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#Diogo_de_Boitaca -->
 
     <owl:NamedIndividual rdf:about="&attr;Diogo_de_Boitaca">
-        <rdf:type rdf:resource="&attr;District"/>
+        <rdf:type rdf:resource="&attr;Architect"/>
+        <hasName rdf:datatype="&xsd;string">Diogo de Boitaca</hasName>
     </owl:NamedIndividual>
     
 
@@ -1955,6 +1975,7 @@ Coberta por um manto de neve de Dezembro a Abril, auxiliada também por canhões
 Esta estância de esqui possui 9 pistas, com um total de 7,7 km, consideradas boas para esquiadores iniciantes, mas também há pistas para esquiadores mais avançados. Sua cota mínima é de 1.854 metros de altitude, e a máxima é de 1.984 m.
 
 Desde 2005, a empresa britânica de telecomunicações Vodafone tem patrocinado a estância de esqui e também tem sido responsável por melhorias na mesma.</hasInformation>
+        <hasName rdf:datatype="&xsd;string">Estância de Esqui Vodafone</hasName>
         <hasWebsite rdf:datatype="&xsd;string">http://www.skiserradaestrela.com/</hasWebsite>
         <hasDistrict rdf:resource="&attr;Guarda"/>
     </owl:NamedIndividual>
@@ -1965,6 +1986,7 @@ Desde 2005, a empresa britânica de telecomunicações Vodafone tem patrocinado 
 
     <owl:NamedIndividual rdf:about="&attr;Faro">
         <rdf:type rdf:resource="&attr;District"/>
+        <hasName rdf:datatype="&xsd;string">Faro</hasName>
     </owl:NamedIndividual>
     
 
@@ -1973,6 +1995,7 @@ Desde 2005, a empresa britânica de telecomunicações Vodafone tem patrocinado 
 
     <owl:NamedIndividual rdf:about="&attr;Fundação_EDP">
         <rdf:type rdf:resource="&attr;Organization"/>
+        <hasName rdf:datatype="&xsd;string">Fundação EDP</hasName>
     </owl:NamedIndividual>
     
 
@@ -1981,6 +2004,7 @@ Desde 2005, a empresa britânica de telecomunicações Vodafone tem patrocinado 
 
     <owl:NamedIndividual rdf:about="&attr;Gonçalo_de_Torralva">
         <rdf:type rdf:resource="&attr;Architect"/>
+        <hasName rdf:datatype="&xsd;string">Gonçalo de Torralva</hasName>
     </owl:NamedIndividual>
     
 
@@ -2009,6 +2033,7 @@ As obras dotaram as grutas de um conjunto de condições, a nível ambiental, pa
 No interior das grutas, o plano de requalificação previu uma reestruturação dos passadiços e da iluminação, sendo que no espaço envolvente ao monumento foi construido um novo parque de estacionamento.1
 
 A reabertura ao público ocorreu no dia 30 de Julho de 2011</hasInformation>
+        <hasName rdf:datatype="&xsd;string">Gruta do Escoural</hasName>
     </owl:NamedIndividual>
     
 
@@ -2017,6 +2042,7 @@ A reabertura ao público ocorreu no dia 30 de Julho de 2011</hasInformation>
 
     <owl:NamedIndividual rdf:about="&attr;Guarda">
         <rdf:type rdf:resource="&attr;District"/>
+        <hasName rdf:datatype="&xsd;string">Guarda</hasName>
     </owl:NamedIndividual>
     
 
@@ -2025,6 +2051,7 @@ A reabertura ao público ocorreu no dia 30 de Julho de 2011</hasInformation>
 
     <owl:NamedIndividual rdf:about="&attr;Gótico">
         <rdf:type rdf:resource="&attr;Style"/>
+        <hasName rdf:datatype="&xsd;string">Gótico</hasName>
     </owl:NamedIndividual>
     
 
@@ -2033,7 +2060,7 @@ A reabertura ao público ocorreu no dia 30 de Julho de 2011</hasInformation>
 
     <owl:NamedIndividual rdf:about="&attr;IHRU">
         <rdf:type rdf:resource="&attr;Organization"/>
-        <rdfs:label xml:lang="pt">Instituto da Habitação e Reabilitação Urbana</rdfs:label>
+        <hasName rdf:datatype="&xsd;string">Instituto da Habitação e Reabilitação Urbana</hasName>
     </owl:NamedIndividual>
     
 
@@ -2046,6 +2073,7 @@ A reabertura ao público ocorreu no dia 30 de Julho de 2011</hasInformation>
         <hasCoordinates rdf:datatype="&xsd;string">41° 29′ 36″ N, 6° 16′ 25″ W</hasCoordinates>
         <hasInformation rdf:datatype="&xsd;string">A Igreja de Miranda do Douro, antiga Sé de Miranda do Douro, é um templo católico localizado na cidade de Miranda do Douro, nordeste de Portugal.</hasInformation>
         <hasAlternativeName rdf:datatype="&xsd;string">Catedral de Miranda</hasAlternativeName>
+        <hasName rdf:datatype="&xsd;string">Igreja de Miranda do Douro</hasName>
         <hasAlternativeName rdf:datatype="&xsd;string">Igreja de Santa Maria Maior</hasAlternativeName>
         <hasDistrict rdf:resource="&attr;Bragança"/>
         <hasReligion rdf:resource="&attr;Catolica_Romana"/>
@@ -2062,6 +2090,7 @@ A reabertura ao público ocorreu no dia 30 de Julho de 2011</hasInformation>
     <owl:NamedIndividual rdf:about="&attr;Jardim_Afonso_de_Albuquerque">
         <rdf:type rdf:resource="&ontology;Garden"/>
         <hasArea rdf:datatype="&xsd;double">1.6</hasArea>
+        <hasName rdf:datatype="&xsd;string">Jardim Afonso de Albuquerque</hasName>
         <hasInformation rdf:datatype="&xsd;string">O Jardim Afonso de Albuquerque é um jardim situado na Praça Afonso de Albuquerque, na freguesia de Santa Maria de Belém, em Lisboa.
 
 Está inserido numa zona especialmente marcada pelos Descobrimentos portugueses. O nome do jardim é o de Afonso de Albuquerque, governador da Índia entre 1509 e 1515.
@@ -2074,7 +2103,8 @@ O jardim tem uma área de cerca de 1,6 ha de planta quadrangular e simétrica, p
     <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#Jerónimo_de_Ruão -->
 
     <owl:NamedIndividual rdf:about="&attr;Jerónimo_de_Ruão">
-        <rdf:type rdf:resource="&attr;District"/>
+        <rdf:type rdf:resource="&attr;Architect"/>
+        <hasName rdf:datatype="&xsd;string">Jerónimo de Ruão</hasName>
     </owl:NamedIndividual>
     
 
@@ -2082,7 +2112,8 @@ O jardim tem uma área de cerca de 1,6 ha de planta quadrangular e simétrica, p
     <!-- http://www.paginas.fe.up.pt/~ei08053/ontologies/atracoes.owl#João_de_Castilho -->
 
     <owl:NamedIndividual rdf:about="&attr;João_de_Castilho">
-        <rdf:type rdf:resource="&attr;District"/>
+        <rdf:type rdf:resource="&attr;Architect"/>
+        <hasName rdf:datatype="&xsd;string">João de Castilho</hasName>
     </owl:NamedIndividual>
     
 
@@ -2091,6 +2122,7 @@ O jardim tem uma área de cerca de 1,6 ha de planta quadrangular e simétrica, p
 
     <owl:NamedIndividual rdf:about="&attr;Lisboa">
         <rdf:type rdf:resource="&attr;District"/>
+        <hasName rdf:datatype="&xsd;string">Lisboa</hasName>
     </owl:NamedIndividual>
     
 
@@ -2099,6 +2131,7 @@ O jardim tem uma área de cerca de 1,6 ha de planta quadrangular e simétrica, p
 
     <owl:NamedIndividual rdf:about="&attr;Maneirista">
         <rdf:type rdf:resource="&attr;Style"/>
+        <hasName rdf:datatype="&xsd;string">Maneirista</hasName>
     </owl:NamedIndividual>
     
 
@@ -2107,6 +2140,7 @@ O jardim tem uma área de cerca de 1,6 ha de planta quadrangular e simétrica, p
 
     <owl:NamedIndividual rdf:about="&attr;Manuelino">
         <rdf:type rdf:resource="&attr;Style"/>
+        <hasName rdf:datatype="&xsd;string">Manuelino</hasName>
     </owl:NamedIndividual>
     
 
@@ -2115,6 +2149,7 @@ O jardim tem uma área de cerca de 1,6 ha de planta quadrangular e simétrica, p
 
     <owl:NamedIndividual rdf:about="&attr;Miguel_de_Arruda">
         <rdf:type rdf:resource="&attr;Architect"/>
+        <hasName rdf:datatype="&xsd;string">Miguel de Arruda</hasName>
     </owl:NamedIndividual>
     
 
@@ -2125,6 +2160,7 @@ O jardim tem uma área de cerca de 1,6 ha de planta quadrangular e simétrica, p
         <rdf:type rdf:resource="&ontology;Monument"/>
         <hasConstructionDate rdf:datatype="&xsd;string">1954</hasConstructionDate>
         <hasCoordinates rdf:datatype="&xsd;string">41° 8′ 58.89″ N, 8° 36′ 38.56″ W</hasCoordinates>
+        <hasName rdf:datatype="&xsd;string">Monumento Almeida Garrett</hasName>
         <hasInformation rdf:datatype="&xsd;string">O monumento a Almeida Garrett, personalidade marcante do século XIX nascido no Porto, situa-se me frente à Câmara Municipal do Porto, na praça General Humberto Delgado ao cimo da Avenida dos Aliados.
 
 Foi inaugurada em 11 de Novembro de 1954, para assinalar o centenário da morte do poeta, e realizada em bronze pelo escultor Salvador Barata Feyo.</hasInformation>
@@ -2140,6 +2176,7 @@ Foi inaugurada em 11 de Novembro de 1954, para assinalar o centenário da morte 
         <hasConstructionDate rdf:datatype="&xsd;string">1502</hasConstructionDate>
         <hasCoordinates rdf:datatype="&xsd;string">38° 41′ 52″ N, 9° 12′ 24″ W</hasCoordinates>
         <hasAlternativeName rdf:datatype="&xsd;string">Mosteiro de Santa Maria de Belém</hasAlternativeName>
+        <hasName rdf:datatype="&xsd;string">Mosteiro dos Jerónimos</hasName>
         <hasInformation rdf:datatype="&xsd;string">Mosteiro dos Jerónimos ou Mosteiro de Santa Maria de Belém é um mosteiro português do século XVI. Situa-se em Belém, Lisboa, perto do estuário do Rio Tejo.</hasInformation>
         <hasArchitect rdf:resource="&attr;Diogo_de_Boitaca"/>
         <hasArchitect rdf:resource="&attr;Jerónimo_de_Ruão"/>
@@ -2160,6 +2197,7 @@ Foi inaugurada em 11 de Novembro de 1954, para assinalar o centenário da morte 
         <hasConstructionDate rdf:datatype="&xsd;string">1833</hasConstructionDate>
         <hasCoordinates rdf:datatype="&xsd;string">41° 8′ 51.75″ N, 8° 37′ 17.58″ W</hasCoordinates>
         <hasMuseumType rdf:datatype="&xsd;string">Arte e Artes decorativas do séc. XIX e início do séc. XX</hasMuseumType>
+        <hasName rdf:datatype="&xsd;string">Museu Nacional de Soares dos Reis</hasName>
         <hasInformation rdf:datatype="&xsd;string">O Museu Nacional de Soares dos Reis é o primeiro museu público de arte do país, tendo sido fundado em 1833 sob a égide do liberalismo. Destinou-se a recolher os bens confiscados aos conventos abandonados do Porto e aos extintos de fora do Porto (mosteiros de S. Martinho de Tibães e de Santa Cruz de Coimbra). O saque decorreu durante a guerra civil que opôs absolutistas e liberais, chefiados pelo regente D. Pedro, duque de Bragança.</hasInformation>
         <hasWebsite rdf:datatype="&xsd;string">http://mnsr.imc-ip.pt/</hasWebsite>
         <hasDistrict rdf:resource="&attr;Porto"/>
@@ -2173,6 +2211,7 @@ Foi inaugurada em 11 de Novembro de 1954, para assinalar o centenário da morte 
         <rdf:type rdf:resource="&ontology;Museum"/>
         <hasConstructionDate rdf:datatype="&xsd;string">1990</hasConstructionDate>
         <hasMuseumType rdf:datatype="&xsd;string">Ciência e Arqueologia Industrial</hasMuseumType>
+        <hasName rdf:datatype="&xsd;string">Museu da Electricidade</hasName>
         <hasInformation rdf:datatype="&xsd;string">O Museu da Electricidade pertencente à Fundação EDP e localiza-se na antiga Central Tejo, Av. de Brasília, Lisboa.
 
 O museu apresenta nos seus espaços, o passado, o presente e o futuro das Energias, num conceito de Museu de Ciência e de Arqueologia industrial, onde convivem lado a lado exposições temáticas e experimentais, com os mais variados eventos culturais e empresariais. Está situado na zona de Belém, em terrenos conquistados por Lisboa ao rio Tejo no final do século XIX, numa das zonas de maior monumentalidade histórica da cidade onde podemos encontrar, entre outros, o Mosteiro dos Jerónimos, o Centro Cultural de Belém, a Torre de Belém, o Padrão dos Descobrimentos, o Palácio e Museu da Presidência da República Portuguesa, ou a Cordoaria Nacional. Edifício classificado de Imóvel de Interesse Público,2 o Museu da Electricidade desenvolve-se no perímetro da antiga central termoeléctrica - Central Tejo, que iluminou a cidade de Lisboa durante mais de quatro décadas.</hasInformation>
@@ -2189,6 +2228,7 @@ O museu apresenta nos seus espaços, o passado, o presente e o futuro das Energi
 
     <owl:NamedIndividual rdf:about="&attr;Patriarcado_de_Lisboa">
         <rdf:type rdf:resource="&attr;Organization"/>
+        <hasName rdf:datatype="&xsd;string">Patriarcado de Lisboa</hasName>
     </owl:NamedIndividual>
     
 
@@ -2197,6 +2237,7 @@ O museu apresenta nos seus espaços, o passado, o presente e o futuro das Energi
 
     <owl:NamedIndividual rdf:about="&attr;Portalegre">
         <rdf:type rdf:resource="&attr;District"/>
+        <hasName rdf:datatype="&xsd;string">Portalegre</hasName>
     </owl:NamedIndividual>
     
 
@@ -2205,6 +2246,7 @@ O museu apresenta nos seus espaços, o passado, o presente e o futuro das Energi
 
     <owl:NamedIndividual rdf:about="&attr;Porto">
         <rdf:type rdf:resource="&attr;District"/>
+        <hasName rdf:datatype="&xsd;string">Porto</hasName>
     </owl:NamedIndividual>
     
 
@@ -2213,6 +2255,7 @@ O museu apresenta nos seus espaços, o passado, o presente e o futuro das Energi
 
     <owl:NamedIndividual rdf:about="&attr;Românico">
         <rdf:type rdf:resource="&attr;Style"/>
+        <hasName rdf:datatype="&xsd;string">Românico</hasName>
     </owl:NamedIndividual>
     
 
@@ -2224,6 +2267,7 @@ O museu apresenta nos seus espaços, o passado, o presente e o futuro das Energi
         <hasCoordinates rdf:datatype="&xsd;string">41° 8′ 34″ N, 8° 36′ 41″ W</hasCoordinates>
         <hasInformation rdf:datatype="&xsd;string">A Sé Catedral da cidade do Porto, situada no coração do centro histórico da cidade do Porto, é um dos principais e mais antigos monumentos de Portugal.</hasInformation>
         <hasAlternativeName rdf:datatype="&xsd;string">Igreja de Nossa Senhora da Assunção</hasAlternativeName>
+        <hasName rdf:datatype="&xsd;string">Sé Catedral do Porto</hasName>
         <hasConstructionDate rdf:datatype="&xsd;string">Século XII</hasConstructionDate>
         <hasWebsite rdf:datatype="&xsd;string">http://www.diocese-porto.pt/index.php?option=com_content&amp;view=article&amp;id=877:igreja-da-se-catedral-do-porto</hasWebsite>
         <hasStyle rdf:resource="&attr;Barroco"/>
@@ -2245,6 +2289,7 @@ O museu apresenta nos seus espaços, o passado, o presente e o futuro das Energi
         <hasContact rdf:datatype="&xsd;string">289 560 300</hasContact>
         <hasOwner rdf:datatype="&xsd;string">Mundo Aquático, SA</hasOwner>
         <hasInformation rdf:datatype="&xsd;string">O Parque Temático Zoomarine encontra-se situado na Guia (Algarve), distando a poucos quilómetros de Albufeira, e constitui uma das ofertas turísticas mais procuradas da região Algarvia. A sua edificação estende-se actualmente por uma área superior a 18 hectares, onde os visitantes podem usufruir de actividades de lazer, entretenimento e educação ambiental.</hasInformation>
+        <hasName rdf:datatype="&xsd;string">Zoomarine</hasName>
         <hasWebsite rdf:datatype="&xsd;string">http://www.zoomarine.pt/pt/</hasWebsite>
         <hasDistrict rdf:resource="&attr;Faro"/>
     </owl:NamedIndividual>
@@ -2289,14 +2334,6 @@ O museu apresenta nos seus espaços, o passado, o presente e o futuro das Energi
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="&ontology;Castle"/>
-            <rdf:Description rdf:about="&ontology;Museum"/>
-            <rdf:Description rdf:about="&ontology;ReligiousBuilding"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="&ontology;Building"/>
             <rdf:Description rdf:about="&ontology;Garden"/>
             <rdf:Description rdf:about="&ontology;Monument"/>
@@ -2304,6 +2341,25 @@ O museu apresenta nos seus espaços, o passado, o presente e o futuro das Energi
             <rdf:Description rdf:about="&ontology;SkiArea"/>
             <rdf:Description rdf:about="&attr;AmusementPark"/>
             <rdf:Description rdf:about="&attr;Cavern"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&attr;Architect"/>
+            <rdf:Description rdf:about="&attr;District"/>
+            <rdf:Description rdf:about="&attr;Organization"/>
+            <rdf:Description rdf:about="&attr;Religion"/>
+            <rdf:Description rdf:about="&attr;Style"/>
+            <rdf:Description rdf:about="&attr;TouristAttraction"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&ontology;Castle"/>
+            <rdf:Description rdf:about="&ontology;Museum"/>
+            <rdf:Description rdf:about="&ontology;ReligiousBuilding"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>
